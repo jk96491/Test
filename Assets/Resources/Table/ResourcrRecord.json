@@ -18,16 +18,20 @@ ResourceRecord:
       "Path": "Prefab/UI/UILayerWating"
     },
     {
-      "ID": 10101,
-      "Path": "Prefab/Character/UILayerLogin"
+      "ID": 1010101,
+      "Path": "Prefab/Character/Brute/Prefabs/Brute Warrior"
     },
     {
-      "ID": 10201,
-      "Path": "Prefab/Character/UILayerLogin"
+      "ID": 1020101,
+      "Path": "Prefab/Character/Karate/Prefabs/Karate Warrior"
     },
     {
-      "ID": 10301,
-      "Path": "Prefab/Character/UILayerLogin"
+      "ID": 1030101,
+      "Path": "Prefab/Character/Ninja/Prefabs/Ninja Warrior"
+    },
+    {
+      "ID": 1040101,
+      "Path": "Prefab/Character/Sorceress/Prefabs/Sorceress Warrior"
     }
   ]
 }

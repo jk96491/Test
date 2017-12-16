@@ -1,0 +1,13 @@
+ChracterRecord:
+{
+  "Info": 
+  [
+    {
+      "ID": 10101,
+      "ModelID": 1010101,
+      "MAXHP": 5000,
+      "Name": "Brute",
+      "Desc":  "Brute Character"
+    }
+  ]
+}

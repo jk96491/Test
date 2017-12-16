@@ -1,10 +1,13 @@
 TableRecord:
 {
-	Info:
-	[
+  Info: [
     {
       "Type": "RESOURCE",
       "Path": "Table/ResourcrRecord"
+    },
+    {
+      "Type": "CHARACTER",
+      "Path": "Table/CharacterRecord/Brute"
     }
-	]
+  ]
 }

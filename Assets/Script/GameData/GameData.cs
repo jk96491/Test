@@ -7,12 +7,14 @@ public class GameData {
     // 각 Record들
     public TableRecord tableRecord = null;
     public ResourceRecord resourceRecord = null;
+    public CharacterRecord characterRecord = null;
 
     public enum DataType : sbyte
     {
         NONE = -1,
         TABLE,
         RESOURCE,
+        CHARACTER,
     }
 
     private string tablePath = "Table/TableRecord";
@@ -89,6 +91,7 @@ public class GameData {
         {
             case DataType.TABLE: { return new TableRecord(); }
             case DataType.RESOURCE: { return new ResourceRecord(); }
+            case DataType.CHARACTER: { return new CharacterRecord(); }
         }
         return null;
     }
@@ -99,6 +102,7 @@ public class GameData {
         {
             case DataType.TABLE: { return this.tableRecord; }
             case DataType.RESOURCE: { return this.resourceRecord; }
+            case DataType.CHARACTER: { return this.characterRecord; }
         }
         return null;
     }
@@ -109,6 +113,7 @@ public class GameData {
         {
             case DataType.TABLE: { this.tableRecord = record_ as TableRecord; } break;
             case DataType.RESOURCE: { this.resourceRecord = record_ as ResourceRecord; } break;
+            case DataType.CHARACTER: { this.characterRecord = record_ as CharacterRecord; } break;
         }
     }
 }
