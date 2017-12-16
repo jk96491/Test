@@ -38,6 +38,8 @@ public class GameProtocol : MonoBehaviour
         public int exp = 0;
         public int level = 0;
         public int serverID = 0;
+        public int gold = 0;
+        public int gem = 0;
     }
 
 

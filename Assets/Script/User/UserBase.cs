@@ -9,6 +9,12 @@ public class UserBase {
     private int serverID;
     private int level = 0;
     private int exp = 0;
+    
+    private int gold = 0;
+    private int gem = 0;
+
+    public int Gold { get { return this.gold; } }
+    public int Gem { get { return this.gem; } }
 
     public string NickName { get { return this.nickName; } }
     public int Level { get { return this.level; } }
@@ -22,6 +28,8 @@ public class UserBase {
         level = userInfo_.level;
         exp = userInfo_.exp;
         serverID = userInfo_.serverID;
+        gold = userInfo_.gold;
+        gem = userInfo_.gem;
     }
 
     public void RequestCreateNickName(string nickName_, Action<GameProtocol.RS_CreateNickName, string> CreateNickNameCallBack_ = null)

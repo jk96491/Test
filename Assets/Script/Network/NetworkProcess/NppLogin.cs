@@ -64,6 +64,8 @@ public static class NppLogin
         rsLoginProtocol.userInfo.nickName = "Guest";
         rsLoginProtocol.userInfo.level = 1;
         rsLoginProtocol.userInfo.exp = 0;
+        rsLoginProtocol.userInfo.gold = 999999;
+        rsLoginProtocol.userInfo.gem = 999999;
 
         rsLoginProtocol.characterInfos[0] = new GameProtocol.CharacterInfo();
         rsLoginProtocol.characterInfos[0].id = 10101;

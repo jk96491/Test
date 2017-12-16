@@ -16,6 +16,12 @@ public class UI_LayoutPlayerInfo : UI_LayoutBase
     [SerializeField]
     private UIProgressBar expProgress = null;
 
+    [Header("재화 정보")]
+    [SerializeField]
+    private UILabel goldLabel = null;
+    [SerializeField]
+    private UILabel gemLabel = null;
+
     protected override void Initialize()
     {
         OnRefresh();
@@ -40,6 +46,12 @@ public class UI_LayoutPlayerInfo : UI_LayoutBase
         float expValue = (float)userExp / maxExp;
         SetExpProgress(expValue);
         SetProgressExpLabel((int)(expValue * 100));
+
+        int gold = UserManager.Instance.localUser.Gold;
+        SetGoldLabel(gold);
+
+        int gem = UserManager.Instance.localUser.Gem;
+        SetGemLabel(gem);
     }
 
     private void SetUserTexture(Texture tex_)
@@ -70,5 +82,17 @@ public class UI_LayoutPlayerInfo : UI_LayoutBase
     {
         if (null != expProgress)
             expProgress.value = value_;
+    }
+
+    public void SetGoldLabel(int gold_)
+    {
+        if (null != goldLabel)
+            goldLabel.text = gold_.ToString();
+    }
+
+    public void SetGemLabel(int gem_)
+    {
+        if (null != gemLabel)
+            gemLabel.text = gem_.ToString();
     }
 }
