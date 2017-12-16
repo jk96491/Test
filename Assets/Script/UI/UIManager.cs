@@ -17,7 +17,6 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private UIRoot root = null;
     private Dictionary<UIType, UI_LayerBase> _loadedUI_Dic = new Dictionary<UIType, UI_LayerBase>();
-
     
     public void OpenUI(UIType type_)
     {

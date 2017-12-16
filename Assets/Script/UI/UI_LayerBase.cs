@@ -29,7 +29,7 @@ public class UI_LayerBase : MonoBehaviour
         {
             if(null != layoutList[i])
             {
-                layoutList[i].InitLayout();
+                layoutList[i].InitLayout(this);
             }
         }
     }

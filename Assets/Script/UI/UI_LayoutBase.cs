@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class UI_LayoutBase : MonoBehaviour
 {
-    public void InitLayout()
+    public void InitLayout(UI_LayerBase layerUI_)
     {
-        Initialize();
+        Initialize(layerUI_);
     }
     
     public void RefreshLayout()
@@ -14,7 +14,7 @@ public class UI_LayoutBase : MonoBehaviour
         OnRefresh();
     }
 
-    protected virtual void Initialize()
+    protected virtual void Initialize(UI_LayerBase layerUI_)
     {
 
     }

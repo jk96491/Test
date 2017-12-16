@@ -22,7 +22,7 @@ public class UI_LayoutPlayerInfo : UI_LayoutBase
     [SerializeField]
     private UILabel gemLabel = null;
 
-    protected override void Initialize()
+    protected override void Initialize(UI_LayerBase layerUI_)
     {
         OnRefresh();
     }
