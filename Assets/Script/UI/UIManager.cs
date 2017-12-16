@@ -24,6 +24,7 @@ public class UIManager : Singleton<UIManager>
         if(true == _loadedUI_Dic.ContainsKey(type_))
         {
             _loadedUI_Dic[type_].Acivate();
+            _loadedUI_Dic[type_].RefreshUI();
         }
         else
         {
@@ -59,7 +60,7 @@ public class UIManager : Singleton<UIManager>
                 uiObj.transform.SetParent(UI_ParentTrans);
                 uiObj.transform.localPosition = Vector3.zero;
                 uiObj.transform.localScale = Vector3.one;
-                uiLayer.Acivate();
+                uiLayer.InitUI();
             }
             else
             {

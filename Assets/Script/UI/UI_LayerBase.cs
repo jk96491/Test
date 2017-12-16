@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class UI_LayerBase : MonoBehaviour
 {
+    protected List<UI_LayoutBase> layoutList = new List<UI_LayoutBase>();
+
     public void Acivate()
     {
         this.gameObject.SetActive(true);
-        Initialize();
+        InitAllLayout();
     }
 
     public void DeActivate()
@@ -15,9 +17,47 @@ public class UI_LayerBase : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    public void InitUI()
+    {
+        Initialize();
+        Acivate();
+    }
+
+    private void InitAllLayout()
+    {
+        for(int i = 0; i < layoutList.Count; i++)
+        {
+            if(null != layoutList[i])
+            {
+                layoutList[i].InitLayout();
+            }
+        }
+    }
+
+    private void RefreshAllLayout()
+    {
+        for (int i = 0; i < layoutList.Count; i++)
+        {
+            if (null != layoutList[i])
+            {
+                layoutList[i].RefreshLayout();
+            }
+        }
+    }
+
     protected virtual void Initialize()
     {
 
+    }
+
+    protected virtual void Refresh()
+    {
+
+    }
+
+    public void RefreshUI()
+    {
+        Refresh();
     }
 
 }
