@@ -31,9 +31,11 @@ public class NetworkManager : Singleton<NetworkManager> {
 
     protected virtual IEnumerator Connect(Action<WWW> RsFuntion)
     {
+        UIManager.Instance.OpenWatingUI();
         WWW www = new WWW(RequestURL);
         yield return www;
 
+        UIManager.Instance.CloseWatingUI();
         if (null != RsFuntion)
             RsFuntion(www);
     }

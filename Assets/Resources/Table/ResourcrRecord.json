@@ -14,6 +14,10 @@ ResourceRecord:
       "Path": "Prefab/UI/UILayerCreateNickName"
     },
     {
+      "ID": 401,
+      "Path": "Prefab/UI/UILayerWating"
+    },
+    {
       "ID": 10101,
       "Path": "Prefab/Character/UILayerLogin"
     },

@@ -8,7 +8,8 @@ public class UIManager : Singleton<UIManager>
     {
         UI_LAYER_LOGIN,
         UI_LAYER_LOBBY,
-        UI_LAYER_CREATE_NICKNAME
+        UI_LAYER_CREATE_NICKNAME,
+        UI_WATING = 50,
     }
 
     [SerializeField]
@@ -87,6 +88,45 @@ public class UIManager : Singleton<UIManager>
             {
                 uiLayer.DeActivate();
             }
+        }
+    }
+
+    public void OpenWatingUI()
+    {
+        if (true == _loadedUI_Dic.ContainsKey(UIType.UI_WATING))
+        {
+            _loadedUI_Dic[UIType.UI_WATING].Acivate();
+        }
+        else
+        {
+            GameObject uiObj = null;
+            UI_LayerBase uiLayer = null;
+
+            uiObj = Instantiate(ResourceUtil.RoadPrefab(ResourceRecord.UI_WATING));
+            uiLayer = uiObj.GetComponent<UI_LayerBase>();
+
+            if (null != uiObj && null != uiLayer)
+            {
+                _loadedUI_Dic.Add(UIType.UI_WATING, uiLayer);
+                uiObj.SetActive(true);
+                uiObj.transform.SetParent(UI_ParentTrans);
+                uiObj.transform.localPosition = Vector3.zero;
+                uiObj.transform.localScale = Vector3.one;
+                uiLayer.Acivate();
+                uiObj.GetComponent<UIPanel>().depth = 10;
+            }
+            else
+            {
+                Debug.LogError(string.Format("Do Not Open UI : {0}", UIType.UI_WATING));
+            }
+        }
+    }
+
+    public void CloseWatingUI()
+    {
+        if (true == _loadedUI_Dic.ContainsKey(UIType.UI_WATING))
+        {
+            _loadedUI_Dic[UIType.UI_WATING].DeActivate();
         }
     }
 }
