@@ -1,0 +1,29 @@
+ResourceRecord:
+{
+  "Info": [
+    {
+      "ID": 101,
+      "Path": "Prefab/UI/UILayerLogin"
+    },
+    {
+      "ID": 201,
+      "Path": "Prefab/UI/UILayerLobby"
+    },
+    {
+      "ID": 301,
+      "Path": "Prefab/UI/UILayerCreateNickName"
+    },
+    {
+      "ID": 10101,
+      "Path": "Prefab/Character/UILayerLogin"
+    },
+    {
+      "ID": 10201,
+      "Path": "Prefab/Character/UILayerLogin"
+    },
+    {
+      "ID": 10301,
+      "Path": "Prefab/Character/UILayerLogin"
+    }
+  ]
+}
