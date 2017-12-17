@@ -30,6 +30,7 @@ public class GameProtocol : MonoBehaviour
         public int id = GameData.INVALID_ID;
         public int exp = 0;
         public int level = 0;
+        public float fatigue = 0f;
     }
 
     public class UserInfo

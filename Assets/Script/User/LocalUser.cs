@@ -9,7 +9,7 @@ public class LocalUser : UserBase
     Action<GameProtocol.UserInfo, string> LoginCallBack;
 
     private Dictionary<int/**/, UserCharacter> userCharacterDic = new Dictionary<int, UserCharacter>();
-    private UserCharacter[] userParty = new UserCharacter[3];
+    private int[] userParty = new int[3];
 
     public void RequestLogin(string ID_, Action<GameProtocol.UserInfo, string> LoginCallBack_ = null)
     {
@@ -22,6 +22,11 @@ public class LocalUser : UserBase
         ResetFromServer(Rs_login.userInfo);
         ResetFromServer(Rs_login.characterInfos);
 
+        //파티 임시 세팅
+        userParty[0] = -1;
+        userParty[1] = -1;
+        userParty[2] = -1;
+
         if (null != LoginCallBack)
             LoginCallBack(Rs_login.userInfo, "");
     }
@@ -30,6 +35,11 @@ public class LocalUser : UserBase
     {
         if (null != LoginCallBack)
             LoginCallBack(null, error_);
+    }
+
+    public int FindPartyCharacterByIndex(int index_)
+    {
+        return userParty[index_];
     }
 
     private void ResetFromServer(GameProtocol.CharacterInfo[] characterInfos_)
@@ -55,5 +65,10 @@ public class LocalUser : UserBase
                 }
             }
         }
+    }
+
+    public UserCharacter FindChracterByID(int id_)
+    {
+        return this.userCharacterDic[id_];
     }
 }

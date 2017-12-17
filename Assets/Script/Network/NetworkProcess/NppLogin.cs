@@ -71,16 +71,19 @@ public static class NppLogin
         rsLoginProtocol.characterInfos[0].id = 10101;
         rsLoginProtocol.characterInfos[0].level = 1;
         rsLoginProtocol.characterInfos[0].exp = 0;
+        rsLoginProtocol.characterInfos[0].fatigue = UnityEngine.Random.Range(25f, 85f);
 
         rsLoginProtocol.characterInfos[1] = new GameProtocol.CharacterInfo();
         rsLoginProtocol.characterInfos[1].id = 10201;
         rsLoginProtocol.characterInfos[1].level = 1;
         rsLoginProtocol.characterInfos[1].exp = 0;
+        rsLoginProtocol.characterInfos[1].fatigue = UnityEngine.Random.Range(25f, 85f);
 
         rsLoginProtocol.characterInfos[2] = new GameProtocol.CharacterInfo();
         rsLoginProtocol.characterInfos[2].id = 10301;
         rsLoginProtocol.characterInfos[2].level = 1;
         rsLoginProtocol.characterInfos[2].exp = 0;
+        rsLoginProtocol.characterInfos[2].fatigue = UnityEngine.Random.Range(25f, 85f);
 
         if (null != sucessCallback)
             sucessCallback(rsLoginProtocol);
