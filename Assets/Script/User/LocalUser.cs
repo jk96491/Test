@@ -9,6 +9,7 @@ public class LocalUser : UserBase
     Action<GameProtocol.UserInfo, string> LoginCallBack;
 
     private Dictionary<int/**/, UserCharacter> userCharacterDic = new Dictionary<int, UserCharacter>();
+    private UserCharacter[] userParty = new UserCharacter[3];
 
     public void RequestLogin(string ID_, Action<GameProtocol.UserInfo, string> LoginCallBack_ = null)
     {

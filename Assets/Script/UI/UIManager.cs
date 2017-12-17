@@ -136,4 +136,13 @@ public class UIManager : Singleton<UIManager>
             _loadedUI_Dic[UIType.UI_WATING].DeActivate();
         }
     }
+
+    public UI_LayerBase GetUILayer(UIType type_)
+    {
+        UI_LayerBase uiLayer = null;
+
+        uiLayer = _loadedUI_Dic[type_];
+
+        return uiLayer;
+    }
 }

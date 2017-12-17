@@ -23,4 +23,14 @@ public class UI_LayerLobby : UI_LayerBase
             commonLayOut.gameObject.SetActive(active_);
     }
 
+    public void GoToHome()
+    {
+        SetActiveCommonLayout(true);
+        SetHomeToggleActive();
+    }
+
+    public void SetHomeToggleActive()
+    {
+        menu.SetHomeToggleActive();
+    }
 }
