@@ -6,9 +6,11 @@ public class UI_LCICharacterLayout : UI_LayoutBase
 {
     [SerializeField]
     private UIChacterView[] characterViews = null;
+    private CharacterExhibition exhibition;
 
     protected override void Initialize(UI_LayerBase layerUI_)
     {
+        exhibition = GameObject.Find("CharacterExhibition").GetComponent<CharacterExhibition>();
         OnRefresh();
     }
 
@@ -47,6 +49,9 @@ public class UI_LCICharacterLayout : UI_LayoutBase
                     }
                 }
             }
+
+            if (null != exhibition)
+                exhibition.SetCharacter(i, characterID);
         }
     }
 }

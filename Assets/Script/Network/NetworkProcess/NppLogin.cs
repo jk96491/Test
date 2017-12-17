@@ -85,6 +85,12 @@ public static class NppLogin
         rsLoginProtocol.characterInfos[2].exp = 0;
         rsLoginProtocol.characterInfos[2].fatigue = UnityEngine.Random.Range(25f, 85f);
 
+        rsLoginProtocol.partyInfo = new GameProtocol.PartyInfo();
+        rsLoginProtocol.partyInfo.partyArray = new int[3];
+        rsLoginProtocol.partyInfo.partyArray[0] = 10101;
+        rsLoginProtocol.partyInfo.partyArray[1] = 10201;
+        rsLoginProtocol.partyInfo.partyArray[2] = 10301;
+
         if (null != sucessCallback)
             sucessCallback(rsLoginProtocol);
     }

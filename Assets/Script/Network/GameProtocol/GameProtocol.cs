@@ -18,6 +18,7 @@ public class GameProtocol : MonoBehaviour
     {
         public CharacterInfo[] characterInfos;
         public UserInfo userInfo;
+        public PartyInfo partyInfo;
     }
 
     public class RS_CreateNickName
@@ -42,7 +43,8 @@ public class GameProtocol : MonoBehaviour
         public int gold = 0;
         public int gem = 0;
     }
-
-
-
+    public class PartyInfo
+    {
+        public int[] partyArray;
+    }
 }

@@ -21,11 +21,7 @@ public class LocalUser : UserBase
     {
         ResetFromServer(Rs_login.userInfo);
         ResetFromServer(Rs_login.characterInfos);
-
-        //파티 임시 세팅
-        userParty[0] = -1;
-        userParty[1] = -1;
-        userParty[2] = -1;
+        ResetFromServer(Rs_login.partyInfo);
 
         if (null != LoginCallBack)
             LoginCallBack(Rs_login.userInfo, "");
@@ -64,6 +60,18 @@ public class LocalUser : UserBase
                     }
                 }
             }
+        }
+    }
+
+    private void ResetFromServer(GameProtocol.PartyInfo partyInfo_)
+    {
+        int[] partyArra = partyInfo_.partyArray;
+
+        if (null == userParty)
+            userParty = new int[partyArra.Length];
+        for(int i = 0; i < partyArra.Length; i++)
+        {
+            userParty[i] = partyArra[i];
         }
     }
 

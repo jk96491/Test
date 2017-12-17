@@ -17,6 +17,9 @@ public class WarriorAnimationDemoFREE : MonoBehaviour
 	
 	void Update()
 	{
+        if (AllSceneManager.Instance.CurrentScene == AllSceneManager.SceneType.LOBBY)
+            return;
+
 		//Get input from controls
 		float z = Input.GetAxisRaw("Horizontal");
 		float x = -(Input.GetAxisRaw("Vertical"));
@@ -103,7 +106,10 @@ public class WarriorAnimationDemoFREE : MonoBehaviour
 
 	void OnGUI () 
 	{
-		if (GUI.Button (new Rect (25, 85, 100, 30), "Attack1")) 
+        if (AllSceneManager.Instance.CurrentScene == AllSceneManager.SceneType.LOBBY)
+            return;
+
+        if (GUI.Button (new Rect (25, 85, 100, 30), "Attack1")) 
 		{
 			animator.SetTrigger("Attack1Trigger");
 

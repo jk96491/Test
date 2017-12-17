@@ -23,7 +23,7 @@ ResourceRecord:
     },
     {
       "ID": 1010101,
-      "Path": "Prefab/Character/Brute/Prefabs/Brute Warrior"
+      "Path": "Prefab/Character/Brute/Prefabs/BruteWarrior"
     },
     {
       "ID": 1020101,
