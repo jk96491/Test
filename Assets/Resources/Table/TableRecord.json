@@ -8,6 +8,18 @@ TableRecord:
     {
       "Type": "CHARACTER",
       "Path": "Table/CharacterRecord/Brute"
+    },
+    {
+      "Type": "CHARACTER",
+      "Path": "Table/CharacterRecord/Karate"
+    },
+    {
+      "Type": "CHARACTER",
+      "Path": "Table/CharacterRecord/Ninja"
+    },
+    {
+      "Type": "CHARACTER",
+      "Path": "Table/CharacterRecord/Sorceress"
     }
   ]
 }

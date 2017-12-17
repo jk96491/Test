@@ -8,6 +8,7 @@ public class ResourceRecord : IRecord
     public const int UI_LOBBY = 201;
     public const int UI_CREATE_NICKNAME = 301;
     public const int UI_WATING = 401;
+    public const int UI_CHARACTER_INFO = 501;
 
     public class ResourcreInfo
     {

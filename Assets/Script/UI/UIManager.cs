@@ -9,6 +9,7 @@ public class UIManager : Singleton<UIManager>
         UI_LAYER_LOGIN,
         UI_LAYER_LOBBY,
         UI_LAYER_CREATE_NICKNAME,
+        UI_LAYER_CHARACTER_INFO,
         UI_WATING = 50,
     }
 
@@ -47,6 +48,12 @@ public class UIManager : Singleton<UIManager>
                 case UIType.UI_LAYER_CREATE_NICKNAME:
                     {
                         uiObj = Instantiate(ResourceUtil.RoadPrefab(ResourceRecord.UI_CREATE_NICKNAME));
+                        uiLayer = uiObj.GetComponent<UI_LayerBase>();
+                    }
+                    break;
+                case UIType.UI_LAYER_CHARACTER_INFO:
+                    {
+                        uiObj = Instantiate(ResourceUtil.RoadPrefab(ResourceRecord.UI_CHARACTER_INFO));
                         uiLayer = uiObj.GetComponent<UI_LayerBase>();
                     }
                     break;

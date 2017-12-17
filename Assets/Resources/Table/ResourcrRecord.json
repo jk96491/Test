@@ -18,6 +18,10 @@ ResourceRecord:
       "Path": "Prefab/UI/UILayerWating"
     },
     {
+      "ID": 501,
+      "Path": "Prefab/UI/UILayerCharacterInfo"
+    },
+    {
       "ID": 1010101,
       "Path": "Prefab/Character/Brute/Prefabs/Brute Warrior"
     },
