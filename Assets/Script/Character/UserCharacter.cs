@@ -9,6 +9,8 @@ public class UserCharacter
     private int level = 0;
     private float fatigue = 0;
 
+    public UserSkillMgr skillMgr = new UserSkillMgr();
+
     public int ID { get { return this.id; } }
     public int Exp { get { return this.exp; } }
     public int Level { get { return this.level; } }
@@ -20,5 +22,7 @@ public class UserCharacter
         exp = characterInfo.exp;
         level = characterInfo.level;
         fatigue = characterInfo.fatigue;
+
+        skillMgr.ReserFromServer(characterInfo.equipSkillInfos);
     }
 }

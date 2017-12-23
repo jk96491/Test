@@ -1,0 +1,19 @@
+ChracterRecord:
+{
+  "Info": [
+    {
+      "ID": 10301,
+      "ModelID": 1030101,
+      "MAXHP": 4800,
+      "Name": "Ninja",
+      "Desc": "Ninja Character",
+      "Skills": [
+        103010101,
+        103010102,
+        103010103,
+        103010104,
+        103010105
+      ]
+    }
+  ]
+}

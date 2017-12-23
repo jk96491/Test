@@ -1,0 +1,19 @@
+ChracterRecord:
+{
+  "Info": [
+    {
+      "ID": 10201,
+      "ModelID": 1020101,
+      "MAXHP": 4500,
+      "Name": "Karate",
+      "Desc": "Karate Character",
+      "Skills": [
+        102010101,
+        102010102,
+        102010103,
+        102010104,
+        102010105
+      ]
+    }
+  ]
+}

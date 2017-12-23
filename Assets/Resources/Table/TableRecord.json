@@ -7,19 +7,19 @@ TableRecord:
     },
     {
       "Type": "CHARACTER",
-      "Path": "Table/CharacterRecord/Brute"
+      "Path": "Table/CharacterRecord/Brute10101"
     },
     {
       "Type": "CHARACTER",
-      "Path": "Table/CharacterRecord/Karate"
+      "Path": "Table/CharacterRecord/Karate10201"
     },
     {
       "Type": "CHARACTER",
-      "Path": "Table/CharacterRecord/Ninja"
+      "Path": "Table/CharacterRecord/Ninja10301"
     },
     {
       "Type": "CHARACTER",
-      "Path": "Table/CharacterRecord/Sorceress"
+      "Path": "Table/CharacterRecord/Sorceress10401"
     }
   ]
 }

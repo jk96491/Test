@@ -67,29 +67,30 @@ public static class NppLogin
         rsLoginProtocol.userInfo.gold = 999999;
         rsLoginProtocol.userInfo.gem = 999999;
 
-        rsLoginProtocol.characterInfos[0] = new GameProtocol.CharacterInfo();
-        rsLoginProtocol.characterInfos[0].id = 10101;
-        rsLoginProtocol.characterInfos[0].level = 1;
-        rsLoginProtocol.characterInfos[0].exp = 0;
-        rsLoginProtocol.characterInfos[0].fatigue = UnityEngine.Random.Range(25f, 85f);
+        for(int i = 0; i < rsLoginProtocol.characterInfos.Length; i++)
+        {
+            rsLoginProtocol.characterInfos[i] = new GameProtocol.CharacterInfo();
+            rsLoginProtocol.characterInfos[i].id = 10101 + i * 100;
+            rsLoginProtocol.characterInfos[i].level = 1;
+            rsLoginProtocol.characterInfos[i].exp = 0;
+            rsLoginProtocol.characterInfos[i].fatigue = UnityEngine.Random.Range(25f, 85f);
 
-        rsLoginProtocol.characterInfos[1] = new GameProtocol.CharacterInfo();
-        rsLoginProtocol.characterInfos[1].id = 10201;
-        rsLoginProtocol.characterInfos[1].level = 1;
-        rsLoginProtocol.characterInfos[1].exp = 0;
-        rsLoginProtocol.characterInfos[1].fatigue = UnityEngine.Random.Range(25f, 85f);
+            rsLoginProtocol.characterInfos[i].equipSkillInfos = new GameProtocol.SkillInfo[3];
 
-        rsLoginProtocol.characterInfos[2] = new GameProtocol.CharacterInfo();
-        rsLoginProtocol.characterInfos[2].id = 10301;
-        rsLoginProtocol.characterInfos[2].level = 1;
-        rsLoginProtocol.characterInfos[2].exp = 0;
-        rsLoginProtocol.characterInfos[2].fatigue = UnityEngine.Random.Range(25f, 85f);
+            GameProtocol.SkillInfo[] equipedSkillInfo = rsLoginProtocol.characterInfos[i].equipSkillInfos;
+
+            for (int j = 0; j < equipedSkillInfo.Length; j++)
+            {
+                equipedSkillInfo[j] = new GameProtocol.SkillInfo();
+                equipedSkillInfo[j].skillID = 101010101 + i * 1000000 + j;
+            }
+        }
 
         rsLoginProtocol.partyInfo = new GameProtocol.PartyInfo();
         rsLoginProtocol.partyInfo.partyArray = new int[3];
         rsLoginProtocol.partyInfo.partyArray[0] = 10101;
         rsLoginProtocol.partyInfo.partyArray[1] = 10201;
-        rsLoginProtocol.partyInfo.partyArray[2] = 10301;
+        rsLoginProtocol.partyInfo.partyArray[2] = 10301; 
 
         if (null != sucessCallback)
             sucessCallback(rsLoginProtocol);
