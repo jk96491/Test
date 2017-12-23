@@ -8,8 +8,13 @@ public class UI_LCICharacterLayout : UI_LayoutBase
     private UIButton exitButton = null;
     [SerializeField]
     private UIChacterView[] characterViews = null;
+    [SerializeField]
+    private UIChacterView dragCharacterView = null;
+
     private CharacterExhibition exhibition;
     private UILayerCharacterInfo parentUILayer = null;
+
+    public bool isDragging = false;
 
     protected override void Initialize(UI_LayerBase layerUI_)
     {
@@ -22,6 +27,7 @@ public class UI_LCICharacterLayout : UI_LayoutBase
 
     protected override void OnRefresh()
     {
+        this.dragCharacterView.SetActiveViewObj(false);
         SetCharacter();
     }
     private void HandleOnClickExitButton()
@@ -65,12 +71,23 @@ public class UI_LCICharacterLayout : UI_LayoutBase
                     }
 
                     characterViews[i].onClick = HandleOnClickCharaterSlot;
+                    characterViews[i].onDragStart = HandleOnDragStart;
+                    characterViews[i].onDrop = HandleOnDrop;
+                    characterViews[i].onDragEnd = HandleOnDragEnd;
                 }
             }
 
             if (null != exhibition)
                 exhibition.SetCharacter(i, characterID);
         }
+    }
+
+    private void Update()
+    {
+        if (false == isDragging)
+            return;
+        Vector3 p = Camera.main.WorldToViewportPoint(Input.mousePosition);
+        this.dragCharacterView.transform.position = UICamera.mainCamera.ViewportToWorldPoint(p);
     }
 
     public void HandleOnClickCharaterSlot(UIViewBase viewBase_)
@@ -81,5 +98,23 @@ public class UI_LCICharacterLayout : UI_LayoutBase
         {
             parentUILayer.ActiveLayout(UILayerCharacterInfo.LayoutType.SKILL);
         }
+    }
+
+    public void HandleOnDragStart(UIViewBase viewBase_)
+    {
+        this.dragCharacterView.SetActiveViewObj(true);
+        isDragging = true;
+    }
+
+    public void HandleOnDrop(UIViewBase dropBase_, UIViewBase dragBase_)
+    {
+        this.dragCharacterView.SetActiveViewObj(false);
+        isDragging = false;
+    }
+
+    public void HandleOnDragEnd(UIViewBase viewBase_)
+    {
+        this.dragCharacterView.SetActiveViewObj(false);
+        isDragging = false;
     }
 }

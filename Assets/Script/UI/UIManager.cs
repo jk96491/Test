@@ -17,6 +17,7 @@ public class UIManager : Singleton<UIManager>
     private Transform UI_ParentTrans = null;
     [SerializeField]
     private UIRoot root = null;
+
     private Dictionary<UIType, UI_LayerBase> _loadedUI_Dic = new Dictionary<UIType, UI_LayerBase>();
     
     public void OpenUI(UIType type_)

@@ -11,6 +11,8 @@ public class UIChacterView : UIViewBase
     [SerializeField]
     private UILabel nameLabel = null;
     [SerializeField]
+    private UITexture characterTexture = null;
+    [SerializeField]
     private UIProgressBar fatigueProgress = null;
     [SerializeField]
     private GameObject InfoObj = null;
