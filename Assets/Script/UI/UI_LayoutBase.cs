@@ -23,4 +23,15 @@ public class UI_LayoutBase : MonoBehaviour
     {
 
     }
+
+    public void DeActivate()
+    {
+        this.gameObject.SetActive(false);
+    }
+
+    public void Activate()
+    {
+        this.gameObject.SetActive(true);
+        OnRefresh();
+    }
 }

@@ -38,6 +38,20 @@ public class CharacterExhibition : MonoBehaviour
 
                 if (null != posTrans[index_])
                     Characters[index_].transform.SetParent(posTrans[index_]);
+                Characters[index_].SetActive(true);
+            }
+        }
+    }
+
+    public void FocusCharacter(int index_)
+    {
+        for(int i = 0; i < Characters.Length; i++)
+        {
+            Characters[i].SetActive(false);
+
+            if(i == index_)
+            {
+                Characters[i].SetActive(true);
             }
         }
     }

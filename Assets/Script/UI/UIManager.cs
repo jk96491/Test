@@ -23,7 +23,8 @@ public class UIManager : Singleton<UIManager>
     {
         if(true == _loadedUI_Dic.ContainsKey(type_))
         {
-            _loadedUI_Dic[type_].Acivate();
+            //_loadedUI_Dic[type_].Acivate();
+            _loadedUI_Dic[type_].gameObject.SetActive(true);
             _loadedUI_Dic[type_].RefreshUI();
         }
         else
