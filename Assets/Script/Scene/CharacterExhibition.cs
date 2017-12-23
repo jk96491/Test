@@ -7,7 +7,13 @@ public class CharacterExhibition : MonoBehaviour
     [SerializeField]
     private Transform[] posTrans = null;
     [SerializeField]
+    private Transform mainCameraPos = null;
+    [SerializeField]
+    private Transform[] characterCarmeraTrans = null;
+    [SerializeField]
     private GameObject[] Characters = null;
+    [SerializeField]
+    private Transform mainCarmeraTrans = null;
 
     public void SetCharacter(int index_, int characterID_)
     {
@@ -41,6 +47,7 @@ public class CharacterExhibition : MonoBehaviour
                 Characters[index_].SetActive(true);
             }
         }
+        CameraManager.Instance.CameraMoving(mainCarmeraTrans.localPosition, mainCameraPos.localPosition, mainCarmeraTrans, 5f);
     }
 
     public void FocusCharacter(int index_)
@@ -54,5 +61,6 @@ public class CharacterExhibition : MonoBehaviour
                 Characters[i].SetActive(true);
             }
         }
+        CameraManager.Instance.CameraMoving(mainCarmeraTrans.localPosition, characterCarmeraTrans[index_].localPosition, mainCarmeraTrans, 5f);
     }
 }
