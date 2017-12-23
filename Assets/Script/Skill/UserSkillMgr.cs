@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserSkillMgr : MonoBehaviour
+public class UserSkillMgr
 {
     private Dictionary<int /*skill ID*/, UserSkillInfo> equipedSkillDic = new Dictionary<int, UserSkillInfo>();
 
@@ -16,6 +16,7 @@ public class UserSkillMgr : MonoBehaviour
             {
                 if (null == equipedSkillInfo_[i])
                     continue;
+
                 UserSkillInfo skillInfo = new UserSkillInfo();
                 skillInfo.ResetFromServer(equipedSkillInfo_[i]);
 

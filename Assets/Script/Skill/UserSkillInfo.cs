@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserSkillInfo : MonoBehaviour {
-
+public class UserSkillInfo
+{
     private int id = GameData.INVALID_ID;
     private int level = 0;
     private int requireLevel = 0;
@@ -12,5 +12,12 @@ public class UserSkillInfo : MonoBehaviour {
     {
         id = skillInfo_.skillID;
         level = skillInfo_.level;
+
+        SkillRecord.SkillInfo skillInfo = GameData.Instance.skillRecord.FindSkillByID(id);
+
+        if(null != skillInfo)
+        {
+            requireLevel = skillInfo.requireLevel;
+        }
     }
 }

@@ -20,6 +20,22 @@ TableRecord:
     {
       "Type": "CHARACTER",
       "Path": "Table/CharacterRecord/Sorceress10401"
+    },
+    {
+      "Type": "SKILL",
+      "Path": "Table/SkillRecord/BruteSkill"
+    },
+    {
+      "Type": "SKILL",
+      "Path": "Table/SkillRecord/KarateSkill"
+    },
+    {
+      "Type": "SKILL",
+      "Path": "Table/SkillRecord/NinjaSkill"
+    },
+    {
+      "Type": "SKILL",
+      "Path": "Table/SkillRecord/SorceressSkill"
     }
   ]
 }

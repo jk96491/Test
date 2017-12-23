@@ -8,6 +8,7 @@ public class GameData {
     public TableRecord tableRecord = null;
     public ResourceRecord resourceRecord = null;
     public CharacterRecord characterRecord = null;
+    public SkillRecord skillRecord = null;
 
     public enum DataType : sbyte
     {
@@ -15,6 +16,7 @@ public class GameData {
         TABLE,
         RESOURCE,
         CHARACTER,
+        SKILL
     }
 
     private string tablePath = "Table/TableRecord";
@@ -92,6 +94,7 @@ public class GameData {
             case DataType.TABLE: { return new TableRecord(); }
             case DataType.RESOURCE: { return new ResourceRecord(); }
             case DataType.CHARACTER: { return new CharacterRecord(); }
+            case DataType.SKILL: { return new SkillRecord(); }
         }
         return null;
     }
@@ -103,6 +106,7 @@ public class GameData {
             case DataType.TABLE: { return this.tableRecord; }
             case DataType.RESOURCE: { return this.resourceRecord; }
             case DataType.CHARACTER: { return this.characterRecord; }
+            case DataType.SKILL: { return this.skillRecord; }
         }
         return null;
     }
@@ -114,6 +118,7 @@ public class GameData {
             case DataType.TABLE: { this.tableRecord = record_ as TableRecord; } break;
             case DataType.RESOURCE: { this.resourceRecord = record_ as ResourceRecord; } break;
             case DataType.CHARACTER: { this.characterRecord = record_ as CharacterRecord; } break;
+            case DataType.SKILL: { this.skillRecord = record_ as SkillRecord; } break;
         }
     }
 }

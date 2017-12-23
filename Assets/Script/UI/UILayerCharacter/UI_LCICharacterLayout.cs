@@ -37,6 +37,9 @@ public class UI_LCICharacterLayout : UI_LayoutBase
 
                 if(null != userChar)
                 {
+                    characterViews[i].dataIndex = characterID;
+                    characterViews[i].slotType = UIViewBase.SLOT_TYPE.CHARACTER_SLOT;
+                    characterViews[i].viewIndex = i;
                     characterViews[i].SetActiveInfoObj(true);
                     characterViews[i].SetLevelLabel(userChar.Level);
                     characterViews[i].SetFatigue(userChar.Fatigue / 100f);
@@ -47,11 +50,18 @@ public class UI_LCICharacterLayout : UI_LayoutBase
                     {
                         characterViews[i].SetNameLabel(charInfo.name);
                     }
+
+                    characterViews[i].onClick = HandleOnClickCharaterSlot;
                 }
             }
 
             if (null != exhibition)
                 exhibition.SetCharacter(i, characterID);
         }
+    }
+
+    public void HandleOnClickCharaterSlot(UIViewBase viewBase_)
+    {
+
     }
 }
