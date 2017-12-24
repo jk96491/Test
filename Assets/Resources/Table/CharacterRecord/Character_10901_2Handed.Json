@@ -4,6 +4,7 @@ ChracterRecord:
     {
       "ID": 10901,
       "ModelID": 1090101,
+      "TextureID": 20901,
       "MAXHP": 5100,
       "Name": "2Handed",
       "Desc": "2Handed Character",

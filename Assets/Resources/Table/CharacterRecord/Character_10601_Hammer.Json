@@ -4,6 +4,7 @@ ChracterRecord:
     {
       "ID": 10601,
       "ModelID": 1060101,
+      "TextureID": 20601,
       "MAXHP": 4900,
       "Name": "Hammer",
       "Desc": "Hammer Character",

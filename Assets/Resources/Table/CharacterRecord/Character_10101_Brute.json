@@ -5,6 +5,7 @@ ChracterRecord:
     {
       "ID": 10101,
       "ModelID": 1010101,
+      "TextureID": 20101,
       "MAXHP": 5000,
       "Name": "Brute",
       "Desc": "Brute Character",

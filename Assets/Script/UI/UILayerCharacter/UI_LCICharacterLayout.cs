@@ -7,6 +7,8 @@ public class UI_LCICharacterLayout : UI_LayoutBase
     [SerializeField]
     private UIButton exitButton = null;
     [SerializeField]
+    private UIButton characterListButton = null;
+    [SerializeField]
     private UIChacterView[] characterViews = null;
     [SerializeField]
     private UIChacterView dragCharacterView = null;
@@ -20,22 +22,46 @@ public class UI_LCICharacterLayout : UI_LayoutBase
     {
         parentUILayer = layerUI_ as UILayerCharacterInfo;
         exhibition = GameObject.Find("CharacterExhibition").GetComponent<CharacterExhibition>();
+
         if (null != exitButton)
             exitButton.onClick.Add(new EventDelegate(HandleOnClickExitButton));
+        if (null != characterListButton)
+            characterListButton.onClick.Add(new EventDelegate(HandleOnClickCharacterList));
+
         OnRefresh();
     }
 
     protected override void OnRefresh()
     {
+        if(false == UIManager.Instance.IsActiveUILayer(UIManager.UIType.UI_LAYER_CHARACTER_SCROLL))
+            SetCharacterViewInfoPos(new Vector3(0, 0, 0));
+
         this.dragCharacterView.SetActiveViewObj(false);
         SetCharacter();
+    }
+
+    private void HandleOnClickCharacterList()
+    {
+        UIManager.Instance.OpenUI(UIManager.UIType.UI_LAYER_CHARACTER_SCROLL);
+
+        SetCharacterViewInfoPos(new Vector3(0, 70, 0));
     }
     private void HandleOnClickExitButton()
     {
         UIManager.Instance.CloseUI(UIManager.UIType.UI_LAYER_CHARACTER_INFO);
+        UIManager.Instance.CloseUI(UIManager.UIType.UI_LAYER_CHARACTER_SCROLL);
         UI_LayerLobby lobbyLayer = UIManager.Instance.GetUILayer(UIManager.UIType.UI_LAYER_LOBBY) as UI_LayerLobby;
         if (null != lobbyLayer)
             lobbyLayer.GoToHome();
+    }
+
+    private void SetCharacterViewInfoPos(Vector3 pos_)
+    {
+        for(int i = 0; i < characterViews.Length; i++)
+        {
+            if (null != characterViews[i])
+                characterViews[i].SetInfoPos(pos_);
+        }
     }
 
     private void SetCharacter()

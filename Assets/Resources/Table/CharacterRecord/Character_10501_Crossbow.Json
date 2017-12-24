@@ -4,6 +4,7 @@ ChracterRecord:
     {
       "ID": 10501,
       "ModelID": 1050101,
+      "TextureID": 20501,
       "MAXHP": 5600,
       "Name": "Crossbow",
       "Desc": "Crossbow Character",

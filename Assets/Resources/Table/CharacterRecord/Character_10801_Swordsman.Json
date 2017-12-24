@@ -4,6 +4,7 @@ ChracterRecord:
     {
       "ID": 10801,
       "ModelID": 1080101,
+      "TextureID": 20801,
       "MAXHP": 5300,
       "Name": "Swordsman",
       "Desc": "Swordsman Character",

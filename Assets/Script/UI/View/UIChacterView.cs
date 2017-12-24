@@ -16,6 +16,10 @@ public class UIChacterView : UIViewBase
     private UIProgressBar fatigueProgress = null;
     [SerializeField]
     private GameObject InfoObj = null;
+    [SerializeField]
+    private Transform InfoTrans = null;
+    [SerializeField]
+    private Vector3 FirstInfoPos = Vector3.zero;
 
     public void SetOverallLabel(int overall_)
     {
@@ -45,5 +49,11 @@ public class UIChacterView : UIViewBase
     {
         if (null != InfoObj)
             InfoObj.SetActive(active_);
+    }
+
+    public void SetInfoPos(Vector3 pos_)
+    {
+        if (null != InfoTrans)
+            InfoTrans.localPosition = FirstInfoPos + pos_;
     }
 }

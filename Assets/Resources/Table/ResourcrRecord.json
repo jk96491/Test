@@ -22,6 +22,10 @@ ResourceRecord:
       "Path": "Prefab/UI/UILayerCharacterInfo"
     },
     {
+      "ID": 601,
+      "Path": "Prefab/UI/UILayerCharacterScroll"
+    },
+    {
       "ID": 1010101,
       "Path": "Prefab/Character/Brute/Prefabs/BruteWarrior"
     },
@@ -68,6 +72,54 @@ ResourceRecord:
     {
       "ID": 1120101,
       "Path": "Prefab/Character/Mage/Prefabs/Mage Warrior"
+    },
+    {
+      "ID": 20101,
+      "Path": "Texture/Character/BruteTexture"
+    },
+    {
+      "ID": 20201,
+      "Path": "Texture/Character/KarateTexture"
+    },
+    {
+      "ID": 20301,
+      "Path": "Texture/Character/NinjaTexture"
+    },
+    {
+      "ID": 20401,
+      "Path": "Texture/Character/SorceressTexture"
+    },
+    {
+      "ID": 20501,
+      "Path": "Texture/Character/CrossbowTexture"
+    },
+    {
+      "ID": 20601,
+      "Path": "Texture/Character/HammerTexture"
+    },
+    {
+      "ID": 20701,
+      "Path": "Texture/Character/SpearmanTexture"
+    },
+    {
+      "ID": 20801,
+      "Path": "Texture/Character/SwordsTexture"
+    },
+    {
+      "ID": 20901,
+      "Path": "Texture/Character/2HandedTexture"
+    },
+    {
+      "ID": 21001,
+      "Path": "Texture/Character/ArcherTexture"
+    },
+    {
+      "ID": 21101,
+      "Path": "Texture/Character/KnightTexture"
+    },
+    {
+      "ID": 21201,
+      "Path": "Texture/Character/MageTexture"
     }
   ]
 }

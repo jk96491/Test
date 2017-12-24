@@ -5,6 +5,7 @@ ChracterRecord:
       "ID": 11101,
       "ModelID": 1110101,
       "MAXHP": 5100,
+      "TextureID": 21101,
       "Name": "Knight",
       "Desc": "Knight Character",
       "Skills": [

@@ -4,6 +4,7 @@ ChracterRecord:
     {
       "ID": 10401,
       "ModelID": 1040101,
+      "TextureID": 20401,
       "MAXHP": 5300,
       "Name": "Sorceress",
       "Desc": "Sorceress Character",

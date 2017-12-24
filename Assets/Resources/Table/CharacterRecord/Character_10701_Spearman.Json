@@ -4,6 +4,7 @@ ChracterRecord:
     {
       "ID": 10701,
       "ModelID": 1070101,
+      "TextureID": 20701,
       "MAXHP": 4600,
       "Name": "SpearMan",
       "Desc": "SpearMan Character",

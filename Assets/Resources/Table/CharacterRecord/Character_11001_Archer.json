@@ -4,6 +4,7 @@ ChracterRecord:
     {
       "ID": 11001,
       "ModelID": 1100101,
+      "TextureID": 21001,
       "MAXHP": 5100,
       "Name": "Archer",
       "Desc": "Archer Character",

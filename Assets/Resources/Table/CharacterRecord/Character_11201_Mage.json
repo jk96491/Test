@@ -5,6 +5,7 @@ ChracterRecord:
       "ID": 11201,
       "ModelID": 1120101,
       "MAXHP": 5100,
+      "TextureID": 21201,
       "Name": "Mage",
       "Desc": "Mage Character",
       "Skills": [

@@ -10,7 +10,12 @@ public class UIManager : Singleton<UIManager>
         UI_LAYER_LOBBY,
         UI_LAYER_CREATE_NICKNAME,
         UI_LAYER_CHARACTER_INFO,
-        UI_WATING = 50,
+
+        UI_TOP_LAYER = 50,
+
+        UI_LAYER_CHARACTER_SCROLL,
+
+        UI_WATING = 100,
     }
 
     [SerializeField]
@@ -59,6 +64,12 @@ public class UIManager : Singleton<UIManager>
                         uiLayer = uiObj.GetComponent<UI_LayerBase>();
                     }
                     break;
+                case UIType.UI_LAYER_CHARACTER_SCROLL:
+                    {
+                        uiObj = Instantiate(ResourceUtil.RoadPrefab(ResourceRecord.UI_CHARACTER_SCROLL));
+                        uiLayer = uiObj.GetComponent<UI_LayerBase>();
+                    }
+                    break;
             }
 
             if(null != uiObj && null != uiLayer)
@@ -68,12 +79,29 @@ public class UIManager : Singleton<UIManager>
                 uiObj.transform.SetParent(UI_ParentTrans);
                 uiObj.transform.localPosition = Vector3.zero;
                 uiObj.transform.localScale = Vector3.one;
+
+                UIPanel panel = uiObj.GetComponent<UIPanel>();
+
+                if(null != panel)
+                {
+                    if (type_ >= UIType.UI_TOP_LAYER)
+                        panel.depth = 100;
+                }
+
                 uiLayer.InitUI();
             }
             else
             {
                 Debug.LogError(string.Format("Do Not Open UI : {0}", type_));
             }
+        }
+    }
+
+    public void RefreshUI(UIType type_)
+    {
+        if (true == _loadedUI_Dic.ContainsKey(type_))
+        {
+            _loadedUI_Dic[type_].RefreshUI();
         }
     }
 
@@ -146,5 +174,17 @@ public class UIManager : Singleton<UIManager>
         uiLayer = _loadedUI_Dic[type_];
 
         return uiLayer;
+    }
+
+    public bool IsActiveUILayer(UIType type_)
+    {
+        bool result = false;
+
+        if(true == _loadedUI_Dic.ContainsKey(type_))
+        {
+            result = _loadedUI_Dic[type_].gameObject.activeInHierarchy;
+        }
+
+        return false;
     }
 }

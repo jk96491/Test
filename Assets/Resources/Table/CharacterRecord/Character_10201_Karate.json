@@ -4,6 +4,7 @@ ChracterRecord:
     {
       "ID": 10201,
       "ModelID": 1020101,
+      "TextureID": 20201,
       "MAXHP": 4500,
       "Name": "Karate",
       "Desc": "Karate Character",
