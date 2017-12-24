@@ -7,19 +7,36 @@ TableRecord:
     },
     {
       "Type": "CHARACTER",
-      "Path": "Table/CharacterRecord/Brute10101"
+      "Path": "Table/CharacterRecord/Character_10101_Brute"
     },
     {
       "Type": "CHARACTER",
-      "Path": "Table/CharacterRecord/Karate10201"
+      "Path": "Table/CharacterRecord/Character_10201_Karate"
     },
     {
       "Type": "CHARACTER",
-      "Path": "Table/CharacterRecord/Ninja10301"
+      "Path": "Table/CharacterRecord/Character_10301_Ninja"
     },
     {
       "Type": "CHARACTER",
-      "Path": "Table/CharacterRecord/Sorceress10401"
+      "Path": "Table/CharacterRecord/Character_10401_Sorceress"
+    },
+    {
+      "Type": "CHARACTER",
+      "Path": "Table/CharacterRecord/Character_10501_Crossbow"
+    },
+    {
+      "Type": "CHARACTER",
+      "Path": "Table/CharacterRecord/Character_10601_Hammer"
+    },
+
+    {
+      "Type": "CHARACTER",
+      "Path": "Table/CharacterRecord/Character_10701_Spearman"
+    },
+    {
+      "Type": "CHARACTER",
+      "Path": "Table/CharacterRecord/Character_10801_Swordsman"
     },
     {
       "Type": "SKILL",
@@ -36,6 +53,22 @@ TableRecord:
     {
       "Type": "SKILL",
       "Path": "Table/SkillRecord/SorceressSkill"
+    },
+    {
+      "Type": "SKILL",
+      "Path": "Table/SkillRecord/CrossbowSkill"
+    },
+    {
+      "Type": "SKILL",
+      "Path": "Table/SkillRecord/HammerSkill"
+    },
+    {
+      "Type": "SKILL",
+      "Path": "Table/SkillRecord/SpearmanSkill"
+    },
+    {
+      "Type": "SKILL",
+      "Path": "Table/SkillRecord/SwordsmanSkill"
     }
   ]
 }

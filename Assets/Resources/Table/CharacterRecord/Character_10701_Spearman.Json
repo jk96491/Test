@@ -1,0 +1,19 @@
+ChracterRecord:
+{
+  "Info": [
+    {
+      "ID": 10701,
+      "ModelID": 1070101,
+      "MAXHP": 4600,
+      "Name": "SpearMan",
+      "Desc": "SpearMan Character",
+      "Skills": [
+        107010101,
+        107010102,
+        107010103,
+        107010104,
+        107010105
+      ]
+    }
+  ]
+}

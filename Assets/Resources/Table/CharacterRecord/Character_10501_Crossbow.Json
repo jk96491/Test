@@ -1,0 +1,19 @@
+ChracterRecord:
+{
+  "Info": [
+    {
+      "ID": 10501,
+      "ModelID": 1050101,
+      "MAXHP": 5600,
+      "Name": "Crossbow",
+      "Desc": "Crossbow Character",
+      "Skills": [
+        105010101,
+        105010102,
+        105010103,
+        105010104,
+        105010105
+      ]
+    }
+  ]
+}

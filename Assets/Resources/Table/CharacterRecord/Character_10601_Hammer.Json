@@ -1,0 +1,19 @@
+ChracterRecord:
+{
+  "Info": [
+    {
+      "ID": 10601,
+      "ModelID": 1060101,
+      "MAXHP": 4900,
+      "Name": "Hammer",
+      "Desc": "Hammer Character",
+      "Skills": [
+        106010101,
+        106010102,
+        106010103,
+        106010104,
+        106010105
+      ]
+    }
+  ]
+}
