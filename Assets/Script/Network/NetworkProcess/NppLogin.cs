@@ -70,7 +70,7 @@ public static class NppLogin
         for(int i = 0; i < rsLoginProtocol.characterInfos.Length; i++)
         {
             rsLoginProtocol.characterInfos[i] = new GameProtocol.CharacterInfo();
-            rsLoginProtocol.characterInfos[i].id = 10101 + (i + 5) * 100;
+            rsLoginProtocol.characterInfos[i].id = 10101 + (i + 8) * 100;
             rsLoginProtocol.characterInfos[i].level = 1;
             rsLoginProtocol.characterInfos[i].exp = 0;
             rsLoginProtocol.characterInfos[i].fatigue = UnityEngine.Random.Range(25f, 85f);
@@ -82,15 +82,15 @@ public static class NppLogin
             for (int j = 0; j < equipedSkillInfo.Length; j++)
             {
                 equipedSkillInfo[j] = new GameProtocol.SkillInfo();
-                equipedSkillInfo[j].skillID = 101010101 + (i + 5) * 1000000 + j;
+                equipedSkillInfo[j].skillID = 101010101 + (i + 8) * 1000000 + j;
             }
         }
 
         rsLoginProtocol.partyInfo = new GameProtocol.PartyInfo();
         rsLoginProtocol.partyInfo.partyArray = new int[3];
-        rsLoginProtocol.partyInfo.partyArray[0] = 10601;
-        rsLoginProtocol.partyInfo.partyArray[1] = 10701;
-        rsLoginProtocol.partyInfo.partyArray[2] = 10801; 
+        rsLoginProtocol.partyInfo.partyArray[0] = 10901;
+        rsLoginProtocol.partyInfo.partyArray[1] = 11001;
+        rsLoginProtocol.partyInfo.partyArray[2] = 11101; 
 
         if (null != sucessCallback)
             sucessCallback(rsLoginProtocol);

@@ -1,0 +1,25 @@
+SkillRecord:
+{
+  "Info": [
+    {
+      "ID": 110010101,
+      "RequireLevel": 1
+    },
+    {
+      "ID": 110010102,
+      "RequireLevel": 3
+    },
+    {
+      "ID": 110010103,
+      "RequireLevel": 5
+    },
+    {
+      "ID": 110010104,
+      "RequireLevel": 10
+    },
+    {
+      "ID": 110010105,
+      "RequireLevel": 15
+    }
+  ]
+}

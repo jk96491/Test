@@ -52,6 +52,22 @@ ResourceRecord:
     {
       "ID": 1080101,
       "Path": "Prefab/Character/Swordsman/Prefabs/Swordsman Warrior"
+    },
+    {
+      "ID": 1090101,
+      "Path": "Prefab/Character/2Handed/Prefabs/2Handed Warrior"
+    },
+    {
+      "ID": 1100101,
+      "Path": "Prefab/Character/Archer/Prefabs/Archer Warrior"
+    },
+    {
+      "ID": 1110101,
+      "Path": "Prefab/Character/Knight/Prefabs/Knight Warrior"
+    },
+    {
+      "ID": 1120101,
+      "Path": "Prefab/Character/Mage/Prefabs/Mage Warrior"
     }
   ]
 }

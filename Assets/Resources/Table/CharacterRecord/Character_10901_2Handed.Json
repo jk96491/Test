@@ -1,0 +1,19 @@
+ChracterRecord:
+{
+  "Info": [
+    {
+      "ID": 10901,
+      "ModelID": 1090101,
+      "MAXHP": 5100,
+      "Name": "2Handed",
+      "Desc": "2Handed Character",
+      "Skills": [
+        109010101,
+        109010102,
+        109010103,
+        109010104,
+        109010105
+      ]
+    }
+  ]
+}
