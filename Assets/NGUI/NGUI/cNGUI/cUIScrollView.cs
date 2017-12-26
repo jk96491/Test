@@ -26,9 +26,32 @@ public class cUIScrollView : UIScrollView
     public Transform mTransGroupItems;
     public List<Transform> mlistScrollItemObjectPool = new List<Transform>();
     public List<Transform> mlistScrollItemGrid = new List<Transform>();
+    public delegate void ChangeIndexDelegate(UIViewBase item, int index);
 
-   
-   
+    public void Init(int itemCount_, ChangeIndexDelegate callback_)
+    {
+        if (mlistScrollItemGrid.Count > itemCount_)
+        {
+            int deleteCount = mlistScrollItemGrid.Count - itemCount_;
+            for (int i = 0; i < deleteCount; i++)
+                RemoveItem(mlistScrollItemGrid.Count - 1);
+        }
+        else
+        {
+            int addCount = itemCount_ - mlistScrollItemGrid.Count;
+            for (int i = 0; i < addCount; i++)
+                AddItem();
+        }
+
+        for (int i = 0; i < mlistScrollItemGrid.Count; i++)
+        {
+            callback_(mlistScrollItemGrid[i].GetComponent<UIViewBase>(), i);
+        }
+
+        mScrollGrid.Reposition();
+        Press(false);
+    }
+
 
     public void AddItem()
     {

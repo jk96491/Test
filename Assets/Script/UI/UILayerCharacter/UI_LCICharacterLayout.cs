@@ -33,11 +33,10 @@ public class UI_LCICharacterLayout : UI_LayoutBase
 
     protected override void OnRefresh()
     {
-        if(false == UIManager.Instance.IsActiveUILayer(UIManager.UIType.UI_LAYER_CHARACTER_SCROLL))
-            SetCharacterViewInfoPos(new Vector3(0, 0, 0));
-
         this.dragCharacterView.SetActiveViewObj(false);
         SetCharacter();
+        if (false == UIManager.Instance.IsActiveUILayer(UIManager.UIType.UI_LAYER_CHARACTER_SCROLL))
+            SetCharacterViewInfoPos(new Vector3(0, 0, 0));
     }
 
     private void HandleOnClickCharacterList()

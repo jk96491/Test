@@ -103,7 +103,7 @@ ResourceRecord:
     },
     {
       "ID": 20801,
-      "Path": "Texture/Character/SwordsTexture"
+      "Path": "Texture/Character/SwordsmanTexture"
     },
     {
       "ID": 20901,

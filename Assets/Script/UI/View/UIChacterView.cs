@@ -20,6 +20,8 @@ public class UIChacterView : UIViewBase
     private Transform InfoTrans = null;
     [SerializeField]
     private Vector3 FirstInfoPos = Vector3.zero;
+    [SerializeField]
+    private UITexture texture = null;
 
     public void SetOverallLabel(int overall_)
     {
@@ -55,5 +57,11 @@ public class UIChacterView : UIViewBase
     {
         if (null != InfoTrans)
             InfoTrans.localPosition = FirstInfoPos + pos_;
+    }
+
+    public void SetTexture(Texture texture_)
+    {
+        if (null != texture)
+            texture.mainTexture = texture_;
     }
 }

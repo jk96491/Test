@@ -28,7 +28,7 @@ public class CharacterRecord : IRecord
             if (null == this.Info[index])
                 this.Info[index] = new CharacterInfo();
             Info[index].id = rootInfo[index]["ID"];
-            // Info[index].textureID = rootInfo[index]["TextureID"];
+            Info[index].textureID = rootInfo[index]["TextureID"];
             Info[index].modelID = rootInfo[index]["ModelID"];
             Info[index].maxHP = rootInfo[index]["MAXHP"];
             Info[index].name = rootInfo[index]["Name"];
@@ -53,5 +53,10 @@ public class CharacterRecord : IRecord
     public CharacterInfo FindCharacterInfoByID(int id_)
     {
         return this._dataDic[id_];
+    }
+
+    public Dictionary<int, CharacterInfo>.Enumerator GetCharacterDic_Etor()
+    {
+        return this._dataDic.GetEnumerator();
     }
 }
