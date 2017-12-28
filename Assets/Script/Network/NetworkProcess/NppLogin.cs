@@ -64,8 +64,11 @@ public static class NppLogin
         rsLoginProtocol.userInfo.nickName = "Guest";
         rsLoginProtocol.userInfo.level = 1;
         rsLoginProtocol.userInfo.exp = 0;
-        rsLoginProtocol.userInfo.gold = 999999;
-        rsLoginProtocol.userInfo.gem = 999999;
+
+        rsLoginProtocol.userInfo.userMoney = new GameProtocol.UserMoney();
+
+        rsLoginProtocol.userInfo.userMoney.gold = 999999;
+        rsLoginProtocol.userInfo.userMoney.gem = 999999;
 
         for(int i = 0; i < rsLoginProtocol.characterInfos.Length; i++)
         {
@@ -103,6 +106,10 @@ public static class NppLogin
         userInfo.level = root_["level"];
         userInfo.exp = root_["exp"];
         userInfo.nickName = root_["nickname"];
+
+        userInfo.userMoney = new GameProtocol.UserMoney();
+        userInfo.userMoney.gold = root_["Gold"];
+        userInfo.userMoney.gem = root_["Gem"];
     }
 
     private static void ParseChracterInfo(SimpleJSON.JSONNode root_, ref GameProtocol.CharacterInfo[] characterInfo_)
@@ -115,6 +122,18 @@ public static class NppLogin
             characterInfo_[index].id = root_[index]["pid"];
             characterInfo_[index].level = root_[index]["level"];
             characterInfo_[index].exp = root_[index]["exp"];
+            characterInfo_[index].fatigue = root_[index]["Fatigue"];
+
+            SimpleJSON.JSONNode skillRoot = root_[index]["Skills"];
+
+            characterInfo_[index].equipSkillInfos = new GameProtocol.SkillInfo[skillRoot.Count];
+
+            for(int skillIndex = 0; skillIndex < characterInfo_[index].equipSkillInfos.Length; skillIndex++)
+            {
+                characterInfo_[index].equipSkillInfos[skillIndex] = new GameProtocol.SkillInfo();
+                characterInfo_[index].equipSkillInfos[skillIndex].skillID = skillRoot[skillIndex]["ID"];
+                characterInfo_[index].equipSkillInfos[skillIndex].level = skillRoot[skillIndex]["Level"];
+            }
         }
     }
 }

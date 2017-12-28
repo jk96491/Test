@@ -28,8 +28,13 @@ public class UserBase {
         level = userInfo_.level;
         exp = userInfo_.exp;
         serverID = userInfo_.serverID;
-        gold = userInfo_.gold;
-        gem = userInfo_.gem;
+        ResetFromServer(userInfo_.userMoney);
+    }
+
+    public void ResetFromServer(GameProtocol.UserMoney userMoney_)
+    {
+        gold = userMoney_.gold;
+        gem = userMoney_.gem;
     }
 
     public void RequestCreateNickName(string nickName_, Action<GameProtocol.RS_CreateNickName, string> CreateNickNameCallBack_ = null)
