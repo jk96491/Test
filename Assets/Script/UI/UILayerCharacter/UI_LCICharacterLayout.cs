@@ -111,8 +111,8 @@ public class UI_LCICharacterLayout : UI_LayoutBase
     {
         if (false == isDragging)
             return;
-        Vector3 p = Camera.main.WorldToViewportPoint(Input.mousePosition);
-        this.dragCharacterView.transform.position = UICamera.mainCamera.ViewportToWorldPoint(p);
+
+        this.dragCharacterView.transform.localPosition = UICamera.lastWorldPosition;
     }
 
     public void HandleOnClickCharaterSlot(UIViewBase viewBase_)

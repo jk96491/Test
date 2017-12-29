@@ -89,6 +89,7 @@ public class UILCSCharacterListLayout : UI_LayoutBase
         }
 
         characterView.onDragStart = HandleOnDragStart;
+        characterView.onDrop = HandleOnDrop;
         characterView.onDragEnd = HandleOnDragEnd;
     }
 
