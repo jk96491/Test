@@ -1,0 +1,212 @@
+Skills:
+{
+  "Info": [
+    "Chractacter",
+    [
+      {
+        "ID": 10101,
+        "Skins": [
+          {
+            "ID": 10101,
+            "Desc": "Brute 1번 스킨"
+          },
+          {
+            "ID": 10102,
+            "Desc": "Brute 2번 스킨"
+          },
+          {
+            "ID": 10103,
+            "Desc": "Brute 2번 스킨"
+          }
+        ]
+      },
+      {
+        "ID": 10201,
+        "Skins": [
+          {
+            "ID": 10201,
+            "Desc": "Karate 1번 스킨"
+          },
+          {
+            "ID": 10202,
+            "Desc": "Karate 2번 스킨"
+          },
+          {
+            "ID": 10203,
+            "Desc": "Karate 3번 스킨"
+          }
+        ]
+      },
+      {
+        "ID": 10301,
+        "Skills": [
+          {
+            "ID": 10301,
+            "Desc": "Ninja 1번 스킨"
+          },
+          {
+            "ID": 10302,
+            "Desc": "Ninja 2번 스킨"
+          },
+          {
+            "ID": 10303,
+            "Desc": "Ninja 3번 스킨"
+          }
+        ]
+      },
+      {
+        "ID": 10401,
+        "Skills": [
+          {
+            "ID": 10401,
+            "Desc": "Sorceress 1번 스킨"
+          },
+          {
+            "ID": 10402,
+            "Desc": "Sorceress 2번 스킨"
+          },
+          {
+            "ID": 10403,
+            "Desc": "Sorceress 3번 스킨"
+          }
+        ]
+      },
+      {
+        "ID": 10501,
+        "Skills": [
+          {
+            "ID": 10501,
+            "Desc": "Crossbow 1번 스킨"
+          },
+          {
+            "ID": 10502,
+            "Desc": "Crossbow 2번 스킨"
+          },
+          {
+            "ID": 10503,
+            "Desc": "Crossbow 3번 스킨"
+          }
+        ]
+      },
+      {
+        "ID": 10601,
+        "Skills": [
+          {
+            "ID": 10601,
+            "Desc": "Hammer 1번 스킨"
+          },
+          {
+            "ID": 10602,
+            "Desc": "Hammer 2번 스킨"
+          },
+          {
+            "ID": 10603,
+            "Desc": "Hammer 3번 스킨"
+          }
+        ]
+      },
+      {
+        "ID": 10701,
+        "Skills": [
+          {
+            "ID": 10701,
+            "Desc": "Spearman 1번 스킨"
+          },
+          {
+            "ID": 10702,
+            "Desc": "Spearman 2번 스킨"
+          },
+          {
+            "ID": 10703,
+            "Desc": "Spearman 3번 스킨"
+          }
+        ]
+      },
+      {
+        "ID": 10801,
+        "Skills": [
+          {
+            "ID": 10801,
+            "Desc": "Swordsman 1번 스킨"
+          },
+          {
+            "ID": 10802,
+            "Desc": "Swordsman 2번 스킨"
+          },
+          {
+            "ID": 10803,
+            "Desc": "Swordsman 3번 스킨"
+          }
+        ]
+      },
+      {
+        "ID": 10901,
+        "Skills": [
+          {
+            "ID": 10901,
+            "Desc": "2Handed 1번 스킨"
+          },
+          {
+            "ID": 10902,
+            "Desc": "2Handed 2번 스킨"
+          },
+          {
+            "ID": 10903,
+            "Desc": "2Handed 3번 스킨"
+          }
+        ]
+      },
+      {
+        "ID": 11001,
+        "Skills": [
+          {
+            "ID": 11001,
+            "Desc": "Archer 1번 스킨"
+          },
+          {
+            "ID": 11002,
+            "Desc": "Archer 2번 스킨"
+          },
+          {
+            "ID": 11003,
+            "Desc": "Archer 3번 스킨"
+          }
+        ]
+      },
+      {
+        "ID": 11101,
+        "Skills": [
+          {
+            "ID": 11101,
+            "Desc": "Knight 1번 스킨"
+          },
+          {
+            "ID": 11102,
+            "Desc": "Knight 2번 스킨"
+          },
+          {
+            "ID": 11103,
+            "Desc": "Knight 3번 스킨"
+          }
+        ],
+        {
+          "ID": 11201,
+          "Skills": [
+            {
+              "ID": 11201,
+              "Desc": "Mage 1번 스킨"
+            },
+            {
+              "ID": 11202,
+              "Desc": "Mage 2번 스킨"
+            },
+            {
+              "ID": 11203,
+              "Desc": "Mage 3번 스킨"
+            }
+          ]
+        }
+      }
+    ]
+  ]
+}
