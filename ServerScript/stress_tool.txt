@@ -1,0 +1,14 @@
+https://okky.kr/article/27342
+
+http://bcho.tistory.com/892
+
+1. res.json으로 보내기
+
+2. mysql.escape로 injection 방지
+
+3. SQL 수행 후 결과에 따라 commit, rollback
+
+4. SQL Query들 json에 넣어두고 거기서 가져오기
+( magic string 방지 )
+
+5. Dummy == faker

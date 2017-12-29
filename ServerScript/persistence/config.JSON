@@ -1,0 +1,6 @@
+{
+    "HOST":"localhost",
+    "USER":"root",
+    "PASSWORD":"5555",
+    "DATABASE":"initial_portfolio"
+}
