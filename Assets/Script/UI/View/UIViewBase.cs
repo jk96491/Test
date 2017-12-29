@@ -8,6 +8,7 @@ public class UIViewBase : MonoBehaviour
     {
         NONE = -1,
         CHARACTER_SLOT,
+        CHARACTER_LIST
     }
 
     public int dataIndex = -1;

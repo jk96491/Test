@@ -8,6 +8,8 @@ public class UILCSCharacterListLayout : UI_LayoutBase
     private UIButton exitButton = null;
     [SerializeField]
     private cUIScrollView scrollView = null;
+    [SerializeField]
+    private UIChacterView DrageCharacterView = null;
 
     private List<CharacterRecord.CharacterInfo> allCharacterList = new List<CharacterRecord.CharacterInfo>();
 
@@ -21,6 +23,9 @@ public class UILCSCharacterListLayout : UI_LayoutBase
 
     protected override void OnRefresh()
     {
+        if (null != DrageCharacterView)
+            DrageCharacterView.gameObject.SetActive(false);
+
         SetCharacterScroll();
     }
 
@@ -70,6 +75,10 @@ public class UILCSCharacterListLayout : UI_LayoutBase
         if (null == curCharacterInfo)
             return;
 
+        characterView.dataIndex = curCharacterInfo.id;
+        characterView.slotType = UIViewBase.SLOT_TYPE.CHARACTER_LIST;
+        characterView.viewIndex = index_;
+
         string texturePath = GameData.Instance.resourceRecord.FindResoruceByID(curCharacterInfo.textureID);
 
         Texture texture = Resources.Load<Texture>(texturePath) as Texture;
@@ -78,5 +87,35 @@ public class UILCSCharacterListLayout : UI_LayoutBase
         {
             characterView.SetTexture(texture);
         }
+
+        characterView.onDragStart = HandleOnDragStart;
+        characterView.onDragEnd = HandleOnDragEnd;
+    }
+
+    public void HandleOnDragStart(UIViewBase viewBase_)
+    {
+        if (null == DrageCharacterView)
+            return;
+
+        DrageCharacterView.gameObject.SetActive(true);
+
+        UIChacterView charView = viewBase_ as UIChacterView;
+
+        if(null != charView)
+        {
+            DrageCharacterView.SetTexture(charView.GetTexture());
+        }
+
+    }
+
+    public void HandleOnDrop(UIViewBase dropBase_, UIViewBase dragBase_)
+    {
+       
+    }
+
+    public void HandleOnDragEnd(UIViewBase viewBase_)
+    {
+        if (null != DrageCharacterView)
+            DrageCharacterView.gameObject.SetActive(false);
     }
 }

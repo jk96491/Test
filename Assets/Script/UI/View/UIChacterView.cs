@@ -61,7 +61,14 @@ public class UIChacterView : UIViewBase
 
     public void SetTexture(Texture texture_)
     {
-        if (null != texture)
-            texture.mainTexture = texture_;
+        if (null != characterTexture)
+            characterTexture.mainTexture = texture_;
+    }
+
+    public Texture GetTexture()
+    {
+        if (null != this.characterTexture)
+            return this.characterTexture.mainTexture;
+        return null;
     }
 }
