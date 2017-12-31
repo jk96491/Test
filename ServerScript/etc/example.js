@@ -9,7 +9,7 @@ app.get('/person/:id',function(req,res){
         QSTR:req.query.qstr
     };
 
-    res.render('person',obj)
+    // res.render('person',obj);
 });
 
 app.post('/person/',urlencodedParser, function(req,res){
@@ -29,3 +29,7 @@ app.get('/api',function(req,res){
     res.json({first:'John',last:'Doe'});
 });
 };
+
+// post -> req.body
+// get local:3000/users/:id -> req.params
+// get local:3000/users?id=ID -> req.query

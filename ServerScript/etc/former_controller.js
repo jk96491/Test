@@ -1,10 +1,6 @@
-const bodyParser=require('body-parser');
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
-const jsonParser = bodyParser.json();
-
 let dbConn = require('../persistence/dbConnector');
 
-module.exports=function(app){
+module.exports = function(app){
 
   // 000. User Sign up
   //

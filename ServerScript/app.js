@@ -1,11 +1,15 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+const bodyParser = require('body-parser');
+const routes = require('./routes/routes')
 
-const apiController = require('./router/apiController')
+app.use(bodyParser.json());
 
-apiController(app);
+routes(app);
 
-app.listen(port,()=>{
-  console.log('Server running on '+port)
+app.use((err, req, res, next) => {
+  res.status(422).send({error: err.message});
 });
+
+module.exports = app;
