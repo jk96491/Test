@@ -1,0 +1,26 @@
+1. Crowfoot Notation
+
+2. Job 테이블 고려 (기본능력치, 이름 etc)
+(Brute, Ninja etc)
+
+3. 신규생성
+    = 아이디, 비밀번호 저장
+    = 기본 캐릭터 3개 생성
+    = UserParty 테이블에 등록
+
+4. 중복되는 쿼리는 모듈화
+function module(){}
+module.exports = {}
+
+
+
+--------------------------------------------------------------------------------
+
+// var ip = req.headers['x-forwarded-for'] ||
+//  req.connection.remoteAddress ||
+//  req.socket.remoteAddress ||
+//  (req.connection.socket ? req.connection.socket.remoteAddress : null);
+
+// post -> req.body
+// get local:3000/users/:id -> req.params
+// get local:3000/users?id=ID -> req.query

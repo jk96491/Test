@@ -1,0 +1,60 @@
+CREATE TABLE IF NOT EXISTS Users(
+	user_pk INT NOT NULL AUTO_INCREMENT,
+	ID VARCHAR(30) NOT NULL,
+	PW VARCHAR(30) DEFAULT 0000,
+	Gold INT DEFAULT 5000,
+	Gem INT DEFAULT 3000,
+	Level INT DEFAULT 1,
+	Exp INT DEFAULT 0,
+	Nickname VARCHAR(12),
+	PRIMARY KEY (user_pk)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS Characters(
+	char_pk INT NOT NULL AUTO_INCREMENT,
+	Job INT,
+	Level INT DEFAULT 1,
+	Exp INT DEFAULT 0,
+	Fatigue INT DEFAULT 100,
+	EquippedSkin INT DEFAULT 1,
+	user_pk INT NOT NULL,
+	PRIMARY KEY (char_pk, user_pk),
+	FOREIGN KEY (user_pk) REFERENCES Users (user_pk)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS Skills(
+	skill_pk INT NOT NULL AUTO_INCREMENT,
+	skill_name VARCHAR(30) DEFAULT '1234',
+	PRIMARY KEY (skill_pk)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS Skins(
+	skin_pk INT NOT NULL AUTO_INCREMENT,
+	skin_name VARCHAR(30) DEFAULT '1234',
+	PRIMARY KEY (skin_pk)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS CharacterSkill(
+	char_pk INT NOT NULL,
+	skill_pk INT NOT NULL,
+	skill_level INT DEFAULT 1,
+	PRIMARY KEY (char_pk, skill_pk),
+	FOREIGN KEY (char_pk) REFERENCES Characters (char_pk),
+	FOREIGN KEY (skill_pk) REFERENCES Skills (skill_pk)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS CharacterSkin(
+	char_pk INT NOT NULL,
+	skin_pk INT NOT NULL,
+	PRIMARY KEY (char_pk, skin_pk),
+	FOREIGN KEY (char_pk) REFERENCES Characters (char_pk),
+	FOREIGN KEY (skin_pk) REFERENCES Skins (skin_pk)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS UserParty(
+	user_pk INT NOT NULL,
+	char_pk INT NOT NULL,
+	PRIMARY KEY (user_pk, char_pk),
+	FOREIGN KEY (user_pk) REFERENCES Users (user_pk),
+	FOREIGN KEY (char_pk) REFERENCES Characters (char_pk)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
