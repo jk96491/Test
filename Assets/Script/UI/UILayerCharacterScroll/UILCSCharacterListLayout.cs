@@ -88,9 +88,20 @@ public class UILCSCharacterListLayout : UI_LayoutBase
             characterView.SetTexture(texture);
         }
 
-        characterView.onDragStart = HandleOnDragStart;
-        characterView.onDrop = HandleOnDrop;
-        characterView.onDragEnd = HandleOnDragEnd;
+        if(null != UserManager.Instance.localUser.FindChracterByID(characterView.dataIndex))
+        {
+            characterView.onDragStart = HandleOnDragStart;
+            characterView.onDrop = HandleOnDrop;
+            characterView.onDragEnd = HandleOnDragEnd;
+            characterView.SetActive(true);
+        }
+        else
+        {
+            characterView.onDragStart = null;
+            characterView.onDrop = null;
+            characterView.onDragEnd = null;
+            characterView.SetActive(false);
+        }
     }
 
     public void HandleOnDragStart(UIViewBase viewBase_)

@@ -40,12 +40,12 @@ public static class NppCreateNickName
     {
         if (true == string.IsNullOrEmpty(Data.error))
         {
-            GameProtocol.RS_CreateNickName rsLoginProtocol = new GameProtocol.RS_CreateNickName();
+            GameProtocol.RS_CreateNickName Protocol = new GameProtocol.RS_CreateNickName();
 
-            rsLoginProtocol.nickName = NppCreateNickName.nickName;
+            Protocol.nickName = NppCreateNickName.nickName;
 
             if (null != sucessCallback)
-                sucessCallback(rsLoginProtocol);
+                sucessCallback(Protocol);
         }
         else
         {

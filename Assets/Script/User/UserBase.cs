@@ -13,6 +13,7 @@ public class UserBase {
     private int gold = 0;
     private int gem = 0;
 
+    public int ServerID { get { return this.serverID; } }
     public int Gold { get { return this.gold; } }
     public int Gem { get { return this.gem; } }
 

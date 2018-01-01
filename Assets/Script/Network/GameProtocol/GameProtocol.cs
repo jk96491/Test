@@ -13,6 +13,11 @@ public class GameProtocol : MonoBehaviour
         public int ServerID = -1;
         public string nickName = string.Empty;
     }
+    public class Rq_SetUserParty
+    {
+        public int userID;
+        public int[] characterIDs;
+    }
 
     public class Rs_Login
     {
@@ -24,6 +29,12 @@ public class GameProtocol : MonoBehaviour
     public class RS_CreateNickName
     {
         public string nickName = string.Empty;
+    }
+
+    public class Rs_SetUserParty
+    {
+        public string Result = string.Empty;
+        public PartyInfo partyInfo;
     }
 
     public class CharacterInfo

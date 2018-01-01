@@ -135,6 +135,24 @@ public class UI_LCICharacterLayout : UI_LayoutBase
     {
         this.dragCharacterView.SetActiveViewObj(false);
         isDragging = false;
+
+        int[] characterIDs = new int[3];
+
+        characterIDs[0] = UserManager.Instance.localUser.FindPartyCharacterByIndex(0);
+        characterIDs[1] = UserManager.Instance.localUser.FindPartyCharacterByIndex(1);
+        characterIDs[2] = UserManager.Instance.localUser.FindPartyCharacterByIndex(2);
+
+        characterIDs[dropBase_.viewIndex] = dragBase_.dataIndex;
+
+        UserManager.Instance.localUser.RequestSetUserParty(characterIDs, HandleOnResultSetUserParty);
+    }
+
+    private void HandleOnResultSetUserParty(int result_)
+    {
+        if(result_ == 0)
+        {
+            OnRefresh();
+        }
     }
 
     public void HandleOnDragEnd(UIViewBase viewBase_)

@@ -7,6 +7,7 @@ using System;
 public class LocalUser : UserBase
 {
     Action<GameProtocol.UserInfo, string> LoginCallBack;
+    Action<int> SetUserPartyCallBack;
 
     private Dictionary<int/**/, UserCharacter> userCharacterDic = new Dictionary<int, UserCharacter>();
     private int[] userParty = new int[3];
@@ -31,6 +32,37 @@ public class LocalUser : UserBase
     {
         if (null != LoginCallBack)
             LoginCallBack(null, error_);
+    }
+    
+    public void RequestSetUserParty(int[] characterIDs, Action<int> SetUserPartyCallBack_)
+    {
+        SetUserPartyCallBack = SetUserPartyCallBack_;
+
+        for(int i = 0; i < characterIDs.Length; i++)
+        {
+            int ID = characterIDs[i];
+
+            if(null == FindChracterByID(ID))
+            {
+                return;
+            }
+        }
+
+        NppSetUserParty.RequestSetUserParty(this.ServerID, characterIDs, HandleOnSuccessSetUserParty, HandleOnFailSetUserParty);
+    }
+
+    private void HandleOnSuccessSetUserParty(GameProtocol.Rs_SetUserParty Protocol_)
+    {
+        ResetFromServer(Protocol_.partyInfo);
+
+        if (null != SetUserPartyCallBack)
+            SetUserPartyCallBack(0);
+    }
+
+    private void HandleOnFailSetUserParty(string error_)
+    {
+        if (null != SetUserPartyCallBack)
+            SetUserPartyCallBack(1);
     }
 
     public int FindPartyCharacterByIndex(int index_)
@@ -74,9 +106,11 @@ public class LocalUser : UserBase
             userParty[i] = partyArra[i];
         }
     }
-
     public UserCharacter FindChracterByID(int id_)
     {
+        if (false == this.userCharacterDic.ContainsKey(id_))
+            return null;
+
         return this.userCharacterDic[id_];
     }
 }

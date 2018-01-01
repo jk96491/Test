@@ -21,7 +21,9 @@ public class UIChacterView : UIViewBase
     [SerializeField]
     private Vector3 FirstInfoPos = Vector3.zero;
     [SerializeField]
-    private UITexture texture = null;
+    private GameObject ActiveObj = null;
+    [SerializeField]
+    private GameObject DeActiveObj = null;
 
     public void SetOverallLabel(int overall_)
     {
@@ -70,5 +72,11 @@ public class UIChacterView : UIViewBase
         if (null != this.characterTexture)
             return this.characterTexture.mainTexture;
         return null;
+    }
+
+    public void SetActive(bool active)
+    {
+        if (null != DeActiveObj)
+            DeActiveObj.SetActive(!active);
     }
 }

@@ -59,7 +59,7 @@ public static class NppLogin
         GameProtocol.Rs_Login rsLoginProtocol = new GameProtocol.Rs_Login();
 
         rsLoginProtocol.userInfo = new GameProtocol.UserInfo();
-        rsLoginProtocol.characterInfos = new GameProtocol.CharacterInfo[3];
+        rsLoginProtocol.characterInfos = new GameProtocol.CharacterInfo[6];
 
         rsLoginProtocol.userInfo.nickName = "Guest";
         rsLoginProtocol.userInfo.level = 1;
@@ -73,7 +73,7 @@ public static class NppLogin
         for(int i = 0; i < rsLoginProtocol.characterInfos.Length; i++)
         {
             rsLoginProtocol.characterInfos[i] = new GameProtocol.CharacterInfo();
-            rsLoginProtocol.characterInfos[i].id = 10101 + (i + 8) * 100;
+            rsLoginProtocol.characterInfos[i].id = 10101 + (i + 2) * 100;
             rsLoginProtocol.characterInfos[i].level = 1;
             rsLoginProtocol.characterInfos[i].exp = 0;
             rsLoginProtocol.characterInfos[i].fatigue = UnityEngine.Random.Range(25f, 85f);
@@ -85,15 +85,15 @@ public static class NppLogin
             for (int j = 0; j < equipedSkillInfo.Length; j++)
             {
                 equipedSkillInfo[j] = new GameProtocol.SkillInfo();
-                equipedSkillInfo[j].skillID = 101010101 + (i + 8) * 1000000 + j;
+                equipedSkillInfo[j].skillID = 101010101 + (i + 2) * 1000000 + j;
             }
         }
 
         rsLoginProtocol.partyInfo = new GameProtocol.PartyInfo();
         rsLoginProtocol.partyInfo.partyArray = new int[3];
-        rsLoginProtocol.partyInfo.partyArray[0] = 10901;
-        rsLoginProtocol.partyInfo.partyArray[1] = 11001;
-        rsLoginProtocol.partyInfo.partyArray[2] = 11101; 
+        rsLoginProtocol.partyInfo.partyArray[0] = 10301;
+        rsLoginProtocol.partyInfo.partyArray[1] = 10401;
+        rsLoginProtocol.partyInfo.partyArray[2] = 10501; 
 
         if (null != sucessCallback)
             sucessCallback(rsLoginProtocol);
