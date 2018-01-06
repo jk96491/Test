@@ -28,6 +28,13 @@ public class AllSceneManager : Singleton<AllSceneManager>
                         UIManager.Instance.OpenUI(UIManager.UIType.UI_LAYER_LOBBY);
                     }
                     break;
+                case SceneType.GAME:
+                    {
+                        GameData.Instance.LoadTableData();
+                        NetworkManager.Instance.IsNetWorkMode = false;
+                        UserManager.Instance.localUser.RequestLogin("Temp");
+                    }
+                    break;
             }
         }
         currentScene = type_;
@@ -38,6 +45,7 @@ public class AllSceneManager : Singleton<AllSceneManager>
         NONE = -1,
         LOGIN,
         LOBBY,
+        GAME,
     }
 
     private SceneType currentScene = SceneType.NONE;

@@ -24,11 +24,11 @@ public static class NppCreateNickName
         sucessCallback = sucessCallback_;
         failCallback = failCallback_;
 
-        subURL = string.Format("users_nickname/?pid={0}&nick={1}", protocol.ServerID, protocol.nickName);
+        subURL = string.Format("users/{0}/nickname/{1}", protocol.ServerID, protocol.nickName);
 
         if (true == NetworkManager.Instance.IsNetWorkMode)
         {
-            NetworkManager.Instance.ConnectServer(Rs_CreateNickName, subURL);
+            NetworkManager.Instance.ConnectServerByPut(Rs_CreateNickName, subURL);
         }
         else
         {
@@ -36,7 +36,7 @@ public static class NppCreateNickName
         }
     }
 
-    private static void Rs_CreateNickName(WWW Data)
+    private static void Rs_CreateNickName(UnityEngine.Networking.UnityWebRequest Data)
     {
         if (true == string.IsNullOrEmpty(Data.error))
         {

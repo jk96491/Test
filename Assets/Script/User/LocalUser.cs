@@ -97,6 +97,9 @@ public class LocalUser : UserBase
 
     private void ResetFromServer(GameProtocol.PartyInfo partyInfo_)
     {
+        if (null == partyInfo_)
+            return;
+
         int[] partyArra = partyInfo_.partyArray;
 
         if (null == userParty)

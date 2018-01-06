@@ -39,6 +39,7 @@ public class GameProtocol : MonoBehaviour
 
     public class CharacterInfo
     {
+        public int serverID = GameData.INVALID_ID;
         public int id = GameData.INVALID_ID;
         public int exp = 0;
         public int level = 0;

@@ -52,6 +52,9 @@ public class CharacterRecord : IRecord
 
     public CharacterInfo FindCharacterInfoByID(int id_)
     {
+        if (false == _dataDic.ContainsKey(id_))
+            return null;
+
         return this._dataDic[id_];
     }
 

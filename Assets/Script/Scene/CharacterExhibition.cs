@@ -47,7 +47,7 @@ public class CharacterExhibition : MonoBehaviour
                 Characters[index_].SetActive(true);
             }
         }
-        CameraManager.Instance.CameraMoving(mainCarmeraTrans.localPosition, mainCameraPos.localPosition, mainCarmeraTrans, 5f);
+        CameraManager.Instance.CameraMovingByCoroutine(mainCarmeraTrans.localPosition, mainCameraPos.localPosition, mainCarmeraTrans, 8f);
     }
 
     public void FocusCharacter(int index_)
@@ -61,6 +61,6 @@ public class CharacterExhibition : MonoBehaviour
                 Characters[i].SetActive(true);
             }
         }
-        CameraManager.Instance.CameraMoving(mainCarmeraTrans.localPosition, characterCarmeraTrans[index_].localPosition, mainCarmeraTrans, 5f);
+        CameraManager.Instance.CameraMovingByCoroutine(mainCarmeraTrans.localPosition, characterCarmeraTrans[index_].localPosition, mainCarmeraTrans, 8f);
     }
 }
