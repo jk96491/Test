@@ -31,8 +31,11 @@ public class AllSceneManager : Singleton<AllSceneManager>
                 case SceneType.GAME:
                     {
                         GameData.Instance.LoadTableData();
-                        NetworkManager.Instance.IsNetWorkMode = false;
+
+                        if(NetworkManager.Instance.IsNetWorkMode != true)
+                            NetworkManager.Instance.IsNetWorkMode = false;
                         UserManager.Instance.localUser.RequestLogin("Temp");
+                        UIManager.Instance.OpenUI(UIManager.UIType.UI_LAYER_GAME);
                     }
                     break;
             }

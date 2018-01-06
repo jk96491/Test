@@ -10,6 +10,7 @@ public class ResourceRecord : IRecord
     public const int UI_WATING = 401;
     public const int UI_CHARACTER_INFO = 501;
     public const int UI_CHARACTER_SCROLL = 601;
+    public const int UI_GAME = 701;
 
     public class ResourcreInfo
     {

@@ -26,6 +26,10 @@ ResourceRecord:
       "Path": "Prefab/UI/UILayerCharacterScroll"
     },
     {
+      "ID": 701,
+      "Path": "Prefab/UI/UILayerGame"
+    },
+    {
       "ID": 1010101,
       "Path": "Prefab/Character/Brute/Prefabs/BruteWarrior"
     },

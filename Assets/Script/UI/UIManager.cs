@@ -10,6 +10,7 @@ public class UIManager : Singleton<UIManager>
         UI_LAYER_LOBBY,
         UI_LAYER_CREATE_NICKNAME,
         UI_LAYER_CHARACTER_INFO,
+        UI_LAYER_GAME,
 
         UI_TOP_LAYER = 50,
 
@@ -67,6 +68,12 @@ public class UIManager : Singleton<UIManager>
                 case UIType.UI_LAYER_CHARACTER_SCROLL:
                     {
                         uiObj = Instantiate(ResourceUtil.RoadPrefab(ResourceRecord.UI_CHARACTER_SCROLL));
+                        uiLayer = uiObj.GetComponent<UI_LayerBase>();
+                    }
+                    break;
+                case UIType.UI_LAYER_GAME:
+                    {
+                        uiObj = Instantiate(ResourceUtil.RoadPrefab(ResourceRecord.UI_GAME));
                         uiLayer = uiObj.GetComponent<UI_LayerBase>();
                     }
                     break;

@@ -39,7 +39,7 @@ public class Character : MonoBehaviour
 
 	public Warrior warrior;
 
-    public void SetCameraPos(CameraPosType type_, Transform cameraTrans_ ,bool movingCorutine ,System.Action MovingByUpdateEndCallback_ = null)
+    public void SetCameraPos(CameraPosType type_, Transform cameraTrans_ ,bool movingCorutine, float speed_ ,System.Action MovingByUpdateEndCallback_ = null)
     {
         int index = (int)type_;
 
@@ -51,10 +51,10 @@ public class Character : MonoBehaviour
         if(null != cameraTrans[index])
         {
             if (false == movingCorutine)
-                CameraManager.Instance.CameraMovingByUpdate(cameraTrans_, cameraTrans[index].trans, 0.5f, MovingByUpdateEndCallback_);
+                CameraManager.Instance.CameraMovingByUpdate(cameraTrans_, cameraTrans[index].trans, speed_, MovingByUpdateEndCallback_);
             else
-                CameraManager.Instance.CameraMovingByCoroutine(cameraTrans_.position, cameraTrans[index].trans, cameraTrans_.transform, 0.5f, MovingByUpdateEndCallback_);
-            CameraManager.Instance.CameraRotatingByCoroutine(cameraTrans_.rotation, cameraTrans[index].trans.rotation, cameraTrans_.transform, 0.5f);
+                CameraManager.Instance.CameraMovingByCoroutine(cameraTrans_.position, cameraTrans[index].trans, cameraTrans_.transform, speed_, MovingByUpdateEndCallback_);
+            CameraManager.Instance.CameraRotatingByCoroutine(cameraTrans_.rotation, cameraTrans[index].trans.rotation, cameraTrans_.transform, speed_);
         }
     }
 
