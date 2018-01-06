@@ -13,7 +13,6 @@ public class Character : MonoBehaviour
         VIEW4,
     }
 
-
     [System.Serializable]
     public class CameraTrans
     {
