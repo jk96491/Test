@@ -49,7 +49,7 @@ public class GameScene : MonoBehaviour {
     private void EndCameraMove()
     {
         Time.timeScale = 1;
-        //playerCharacter.GoToWayPoint(wayPointTrans[currentWayPointIndex++]);
+        playerCharacter.GoToWayPoint(wayPointTrans[currentWayPointIndex++]);
     }
 
     public void Update()
