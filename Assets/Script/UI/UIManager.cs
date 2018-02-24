@@ -23,6 +23,7 @@ public class UIManager : Singleton<UIManager>
     private Transform UI_ParentTrans = null;
     [SerializeField]
     private UIRoot root = null;
+    public Camera UICamera = null;
 
     private Dictionary<UIType, UI_LayerBase> _loadedUI_Dic = new Dictionary<UIType, UI_LayerBase>();
     

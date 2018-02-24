@@ -39,7 +39,7 @@ public class GameScene : MonoBehaviour {
 
                     if (null != playerCharacter)
                     {
-                        playerCharacter.SetCameraPos(Character.CameraPosType.VIEW1,Camera.main.transform, true, 0.5f, EndCameraMove);
+                        playerCharacter.SetCameraPos(Character.CameraPosType.VIEW1,Camera.main.transform, true, 0.5f, null);
                     }
                 }
             }
