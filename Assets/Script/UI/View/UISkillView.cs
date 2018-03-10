@@ -7,6 +7,8 @@ public class UISkillView : UIViewBase
     [SerializeField]
     private UITexture skillTexture = null;
     [SerializeField]
+    private UILabel skillNameLabel = null;
+    [SerializeField]
     private UILabel levelLabel = null;
     [SerializeField]
     private UILabel descLabel = null;
@@ -21,6 +23,14 @@ public class UISkillView : UIViewBase
     {
         if (null != levelLabel)
             levelLabel.text = string.Format("Lv.{0}", level_);
+    }
+
+    public void SetSkillLevelLabel(string name_)
+    {
+        if(null != this.skillNameLabel)
+        {
+            this.skillNameLabel.text = name_;
+        }
     }
 
     public void SetDescLabel(string desc_)
