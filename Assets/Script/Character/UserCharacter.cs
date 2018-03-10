@@ -23,6 +23,6 @@ public class UserCharacter
         level = characterInfo.level;
         fatigue = characterInfo.fatigue;
 
-        skillMgr.ReserFromServer(characterInfo.equipSkillInfos);
+        skillMgr.ReserFromServer(characterInfo.userCharSkillInfo, characterInfo.equipUserSkillIDs);
     }
 }

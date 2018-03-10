@@ -15,7 +15,7 @@ public class UILayerCharacterInfo : UI_LayerBase
     private UI_LCICharacterLayout characterLayout = null;
     [SerializeField]
     private UI_LCISkillLayout skillLayout = null;
-
+    
     protected override void Initialize()
     {
         this.layoutList.Add(characterLayout);
@@ -28,7 +28,7 @@ public class UILayerCharacterInfo : UI_LayerBase
         ActiveLayout(LayoutType.CHRACTER);
     }
 
-    public void ActiveLayout(LayoutType type_)
+    public void ActiveLayout(LayoutType type_, int value = -1)
     {
         for(int i = 0; i < this.layoutList.Count; i++)
         {
@@ -41,7 +41,10 @@ public class UILayerCharacterInfo : UI_LayerBase
         switch (type_)
         {
             case LayoutType.CHRACTER: characterLayout.Activate(); break;
-            case LayoutType.SKILL: skillLayout.Activate(); break;
+            case LayoutType.SKILL:
+                skillLayout.SetCharacterID(value);
+                skillLayout.Activate();
+                break;
         }
     }
 }

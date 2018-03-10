@@ -44,7 +44,8 @@ public class GameProtocol : MonoBehaviour
         public int exp = 0;
         public int level = 0;
         public float fatigue = 0f;
-        public SkillInfo[] equipSkillInfos;
+        public SkillInfo[] userCharSkillInfo;
+        public int[] equipUserSkillIDs = null;
     }
 
     public class SkillInfo

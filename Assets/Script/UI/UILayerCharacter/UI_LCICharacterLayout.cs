@@ -121,7 +121,7 @@ public class UI_LCICharacterLayout : UI_LayoutBase
         
         if(null != parentUILayer)
         {
-            parentUILayer.ActiveLayout(UILayerCharacterInfo.LayoutType.SKILL);
+            parentUILayer.ActiveLayout(UILayerCharacterInfo.LayoutType.SKILL, viewBase_.dataIndex);
         }
     }
 

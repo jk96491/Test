@@ -79,15 +79,25 @@ public static class NppLogin
             rsLoginProtocol.characterInfos[i].exp = 0;
             rsLoginProtocol.characterInfos[i].fatigue = UnityEngine.Random.Range(25f, 85f);
 
-            rsLoginProtocol.characterInfos[i].equipSkillInfos = new GameProtocol.SkillInfo[3];
+            rsLoginProtocol.characterInfos[i].userCharSkillInfo = new GameProtocol.SkillInfo[5];
 
-            GameProtocol.SkillInfo[] equipedSkillInfo = rsLoginProtocol.characterInfos[i].equipSkillInfos;
+            GameProtocol.SkillInfo[] userCharSkillInfo = rsLoginProtocol.characterInfos[i].userCharSkillInfo;
 
-            for (int j = 0; j < equipedSkillInfo.Length; j++)
+            for (int j = 0; j < userCharSkillInfo.Length; j++)
             {
-                equipedSkillInfo[j] = new GameProtocol.SkillInfo();
-                equipedSkillInfo[j].skillID = 101010101 + (i + 0) * 1000000 + j;
+                userCharSkillInfo[j] = new GameProtocol.SkillInfo();
+                userCharSkillInfo[j].skillID = 101010101 + (i + 0) * 1000000 + j;
             }
+
+            rsLoginProtocol.characterInfos[i].equipUserSkillIDs = new int[3];
+
+            int[] equipUserSkillIDs = rsLoginProtocol.characterInfos[i].equipUserSkillIDs;
+
+            for (int j = 0; j < equipUserSkillIDs.Length; j++)
+            {
+                equipUserSkillIDs[j] = 101010101 + (i + 0) * 1000000 + j;
+            }
+
         }
 
         rsLoginProtocol.partyInfo = new GameProtocol.PartyInfo();
@@ -147,13 +157,13 @@ public static class NppLogin
 
             SimpleJSON.JSONNode skillRoot = root_[index]["Skills"];
 
-            characterInfo_[index].equipSkillInfos = new GameProtocol.SkillInfo[skillRoot.Count];
+            characterInfo_[index].userCharSkillInfo = new GameProtocol.SkillInfo[skillRoot.Count];
 
-            for(int skillIndex = 0; skillIndex < characterInfo_[index].equipSkillInfos.Length; skillIndex++)
+            for(int skillIndex = 0; skillIndex < characterInfo_[index].userCharSkillInfo.Length; skillIndex++)
             {
-                characterInfo_[index].equipSkillInfos[skillIndex] = new GameProtocol.SkillInfo();
-                characterInfo_[index].equipSkillInfos[skillIndex].skillID = skillRoot[skillIndex]["skill_pk"];
-                characterInfo_[index].equipSkillInfos[skillIndex].level = skillRoot[skillIndex]["level"];
+                characterInfo_[index].userCharSkillInfo[skillIndex] = new GameProtocol.SkillInfo();
+                characterInfo_[index].userCharSkillInfo[skillIndex].skillID = skillRoot[skillIndex]["skill_pk"];
+                characterInfo_[index].userCharSkillInfo[skillIndex].level = skillRoot[skillIndex]["level"];
             }
         }
     }

@@ -7,6 +7,8 @@ public class UserSkillInfo
     private int id = GameData.INVALID_ID;
     private int level = 0;
     private int requireLevel = 0;
+    private string name = string.Empty;
+    private string desc = string.Empty;
 
     public void ResetFromServer(GameProtocol.SkillInfo skillInfo_)
     {
